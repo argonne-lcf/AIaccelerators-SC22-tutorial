@@ -1,6 +1,6 @@
 # Programming New AI Accelerators for Scientific Computing
-
-+ **Time:** Monday, 14 November 20221:30pm - 5pm CSTd
++ **Tutorial at Supercomputing 2022**
++ **Time:** Monday, 14 November 2022 1:30pm - 5pm CST
 + **Location:** D161
 + **Description:** Scientific applications are increasingly adopting Artificial Intelligence (AI) techniques to advance science. There are specialized hardware accelerators designed and built to efficiently run AI applications. With diverse hardware and software stacks of these systems, it is challenging to comprehend their capabilities, programming approaches, and measure performance. In this tutorial, we will present an overview of novel AI accelerators namely, SambaNova, Cerebras, Graphcore, Groq, and Habana. This includes presentations on hardware and software features on each system. We present steps on how to program these systems by porting deep learning models with any refactoring of codes implemented in standard DL framework implementations, compiling and running on the accelerator hardware. Next, we conduct a hands-on session on SambaNova and Cerebras systems at ALCF AI Testbed. The tutorial will provide the attendees with an understanding of the key capabilities of emerging AI accelerators and their performance implications for scientific applications.
 
