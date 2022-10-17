@@ -30,7 +30,7 @@ Important links to ALCF accounts page, AI Testbed docs, support etc.
 + [Tutorial Repository](https://github.com/argonne-lcf/AIaccelerators-SC22-tutorial/)
 + [Overviw of AI Testbeds at ALCF](https://www.alcf.anl.gov/alcf-ai-testbed)
 + [ALCF AI Testbed Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/)
-+ [Link to Slack Workspace]() #TODO
++ [Join Slack Workspace](https://join.slack.com/t/aiacc-sc22-tut/shared_invite/zt-1i6r49ks1-9IxbIk6NM4TdHaEol26Z9Q)
 
 
 ## Login Information 
