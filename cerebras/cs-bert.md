@@ -1,4 +1,4 @@
-# BERT (language model) is selected on hands-on section
+# BERT (language model)
 
 Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google.
 
