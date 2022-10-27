@@ -22,10 +22,13 @@
 
 ## Important Links 
 
++ [Program Material with slides and demo](https://anl.box.com/s/0wltiw52s9yuf0d3gzhjlhgyi841yua1)
+
+
 Important links to ALCF accounts page, AI Testbed docs, support etc.
 
 + [SC22 Webpage](https://sc22.supercomputing.org/presentation/?id=tut151&sess=sess221)
-+ [Tutorial Wesbite](https://wordpress.cels.anl.gov/alcf-aitestbed-tutorial-sc22/)
++ [Tutorial Website](https://wordpress.cels.anl.gov/alcf-aitestbed-tutorial-sc22/)
 + [Tutorial Repository](https://github.com/argonne-lcf/AIaccelerators-SC22-tutorial/)
 + [Overviw of AI Testbeds at ALCF](https://www.alcf.anl.gov/alcf-ai-testbed)
 + [ALCF AI Testbed Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/)
