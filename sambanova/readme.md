@@ -1,6 +1,6 @@
-# Sambanova
+# Sambanova Getting Started
 
-## On-Boarding
+## On Boarding
 
 See [ALCF AI Testbed User Guide](https://www.alcf.anl.gov/support-center/get-started) to request an account and additional information.
 
@@ -11,7 +11,7 @@ The second step is to log in to a SambaNova node from the `login node`.
 
 ![SambaNova System View](sambanova_login.jpg "SambaNova System View")
 
-## Log in to Login Node
+## Connect to Login Node
 
 * Login to the SambaNova login node from your local machine using the below command. This uses the MobilePass+ token generated every time you log in to the system. This is the same passcode used to authenticate into other ALCF systems, such as Theta and Cooley.
 
@@ -67,26 +67,23 @@ The second step is to log in to a SambaNova node from the `login node`.
     $ deactivate
     ```
 
-
 ## BERT-Large on Sambanova
 
 Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on Sambanova system. 
 
-* Important Files : 
-  * [transformners_hook.py](./transformers_hook.py): contains code for BERT.
-  * [bert_train-inf.sh](./bert_train-inf.sh): contains driver code to run and profile BERT. 
-
-* For your convenience, these scripts are also available locally on each machine. 
-  Copy them to youyr `$HOME` directory. 
-
+* BERT Code is in the [Bert](./bert/) directory here.  
+  * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
+  * [bert_train-inf.sh](./bert//bert_train-inf.sh): contains driver code to run and profile BERT. 
+  * For your convenience, these scripts are also available locally on each machine. 
+    Copy them to youyr `$HOME` directory. 
     ```bash
     $ cp /var/tmp/Additional/slurm/Models/ANL_Acceptance_RC1_11_5/bert_train-inf.sh ~/
     ```
 
-* Run scripts using `srun`
+* SambaNova uses Slurm for job submission and queueing. We will use `srun` to submit our job to job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. 
     ```bash
     $ cd ~
     $ srun bert_train-inf.sh
     ```
 
-* The sample output of `bert_train-inf.sh` can be found in [bert_output.txt](./bert_output.txt)
+<!-- * The sample output of `bert_train-inf.sh` can be found in [bert_output.txt](./bert_output.txt) -->
