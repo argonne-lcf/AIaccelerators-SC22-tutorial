@@ -17,7 +17,7 @@
 ### Input
 train_input:
     data_processor: BertTfRecordsProcessor
-    data_dir: './input/owt/train_512k_uncased_msl128'
+    data_dir: '/software/cerebras/dataset/bert_large/msl128/'
     vocab_file: '../../vocab/google_research_uncased_L-12_H-768_A-12.txt'
     max_sequence_length: 128
     max_predictions_per_seq: 20  # maximum number of masked LM predictions per sequence.
@@ -26,7 +26,7 @@ train_input:
 
 eval_input:
     data_processor: BertTfRecordsProcessor
-    data_dir: './input/owt/val_uncased_msl128'
+    data_dir: '/software/cerebras/dataset/bert_large/msl128/'
     vocab_file: '../../vocab/google_research_uncased_L-12_H-768_A-12.txt'
     max_sequence_length: 128
     max_predictions_per_seq: 20  # maximum number of masked LM predictions per sequence.
