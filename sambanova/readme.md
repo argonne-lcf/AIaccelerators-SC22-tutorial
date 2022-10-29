@@ -69,8 +69,6 @@ The second step is to log in to a SambaNova node from the `login node`.
 
 ## BERT-Large on Sambanova
 
-Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on Sambanova system. 
-
 * BERT Code is in the [Bert](./bert/) directory here.  
   * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
   * [bert_train-inf.sh](./bert//bert_train-inf.sh): contains driver code to run and profile BERT. 

@@ -1,4 +1,5 @@
 # Programming New AI Accelerators for Scientific Computing
+
 + **Tutorial at Supercomputing 2022**
 + **Time:** Monday, 14 November 2022 1:30pm - 5pm CST
 + **Location:** D161
@@ -6,24 +7,27 @@
 
 ## Tentative Agenda 
 
-
-| Time        | Topic                                                         |
-|-------------|---------------------------------------------------------------|
+| Time        | Topic                                                                     |
+|-------------|---------------------------------------------------------------------------|
 | 1.30 - 1.40 | Welcome and Overview of AI Testbed at ALCF, Argonne National Laboratory   |
-| 1.40 - 3.00 | AI Accelerator Vendor Presentations                           |
-| 1.40 - 2.00 | Habana                                                        |
-| 2.00 - 2.20 | SambaNova                                                      |
-| 2.20 - 2.40 | Cerebras                                                     |
-| 2.40 - 3.00 | Groq                                                          |
-| 3.00 - 3.30 | Coffee Break                                                  |
-| 3.30 - 3.50 | Graphcore                                                        |
-| 3.50 - 5.00 | Hands on Session with Cerebras and Sambanova                    |
+| 1.40 - 3.00 | AI Accelerator Vendor Presentations                                       |
+| 1.40 - 2.00 | Habana                                                                    |
+| 2.00 - 2.20 | SambaNova                                                                 |
+| 2.20 - 2.40 | Cerebras                                                                  |
+| 2.40 - 3.00 | Groq                                                                      |
+| 3.00 - 3.30 | Coffee Break                                                              |
+| 3.30 - 3.50 | Graphcore                                                                 |
+| 3.50 - 5.00 | Hands on Session with Cerebras and Sambanova                              |
+
+
+## Instructions to run BERT-Large
+Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on AI testbeds - 
+
++ [Cerebras](./cerebras/readme.md)
++ [Sambanova](./sambanova/readme.md)
 
 
 ## Important Links 
-
-+ [Program Material with slides and demo](https://anl.box.com/s/0wltiw52s9yuf0d3gzhjlhgyi841yua1)
-
 
 Important links to ALCF accounts page, AI Testbed docs, support etc.
 
@@ -35,7 +39,7 @@ Important links to ALCF accounts page, AI Testbed docs, support etc.
 + [Join Slack Workspace](https://join.slack.com/t/aiacc-sc22-tut/shared_invite/zt-1i6r49ks1-9IxbIk6NM4TdHaEol26Z9Q)
 
 
-## Login Information 
+<!-- ## Login Information 
 
 + How to login to CS-2 and SN systems 
   + [Login Cerebras](./cerebras/cs-login.md)
@@ -50,7 +54,18 @@ Important links to ALCF accounts page, AI Testbed docs, support etc.
   + [Sambanova](./sambanova/sn-job-submission.md)
 + Steps to train BERT-Large model
   + [BERT on Cerebras](./cerebras/cs-bert.md)
-  + [BERT on Sambanova](./sambanova/sn-bert.md)
+  + [BERT on Sambanova](./sambanova/sn-bert.md) -->
 
+
+<!-- 
+#ToDo (Sid)
+
+make readme files for cerebras and sambanova 
+add BERT code for cerebras and sambanova 
+add particular instructions to run BERT code 
+update scripts if necessary for SLURM 
+  pipelining vs weight streaming model 
+how much time it takes to compile and run the code on each sysyem? 
+  how can we reduce waiting time for users during tutorial?  -->
 
 

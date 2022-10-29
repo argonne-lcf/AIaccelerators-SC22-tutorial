@@ -27,9 +27,6 @@ To connect to a CS-2 ("chief") node:<br>
 
 # BERT (language model)
 
-Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on Cerebras system. 
-
-
 * BERT Code is in the [Bert](./bert/) directory. For your convenience, these scripts are also available locally. 
 
 * Login to CS-2:  
