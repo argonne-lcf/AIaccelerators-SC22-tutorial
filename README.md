@@ -7,20 +7,20 @@
 
 ## Tentative Agenda 
 
-| Time        | Topic                                                                     |
-|-------------|---------------------------------------------------------------------------|
-| 1.30 - 1.40 | Welcome and Overview of AI Testbed at ALCF, Argonne National Laboratory   |
-| 1.40 - 3.00 | AI Accelerator Vendor Presentations                                       |
-| 1.40 - 2.00 | Habana                                                                    |
-| 2.00 - 2.20 | SambaNova                                                                 |
-| 2.20 - 2.40 | Cerebras                                                                  |
-| 2.40 - 3.00 | Groq                                                                      |
-| 3.00 - 3.30 | Coffee Break                                                              |
-| 3.30 - 3.50 | Graphcore                                                                 |
-| 3.50 - 5.00 | Hands on Session with Cerebras and Sambanova                              |
+| Time        | Topic                                                 |
+|-------------|-------------------------------------------------------|
+| 1.30 - 1.40 | Welcome and Overview of AI Testbed at ALCF (ANL)      |
+| 1.40 - 3.00 | AI Accelerator Vendor Presentations                   |
+| 1.40 - 2.00 | Chenna Bayapureddy, Jiunn-Yeu Chen (Intel Habana)     |
+| 2.00 - 2.20 | Petro Junior Milan, Jennifer Glore (SambaNova)        |
+| 2.20 - 2.40 | Cindy Orozco Bohorquez, Saumya Satish (Cerebras)      |
+| 2.40 - 3.00 | Victoria Godsoe, Ramakrishnan Sivakumar (Groq)        |
+| 3.00 - 3.30 | Coffee Break                                          |
+| 3.30 - 3.50 | Alex Tsyplikhin (Graphcore)                           |
+| 3.50 - 5.00 | Hands on Session with Cerebras and Sambanova          |
 
 
-## Instructions to run BERT-Large
+## BERT-Large on AI Accelerators
 Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on AI testbeds - 
 
 + [Cerebras](./cerebras/readme.md)
@@ -28,8 +28,6 @@ Bidirectional Encoder Representations from Transformers (BERT) is a transformer-
 
 
 ## Important Links 
-
-Important links to ALCF accounts page, AI Testbed docs, support etc.
 
 + [SC22 Webpage](https://sc22.supercomputing.org/presentation/?id=tut151&sess=sess221)
 + [Tutorial Website](https://wordpress.cels.anl.gov/alcf-aitestbed-tutorial-sc22/)
