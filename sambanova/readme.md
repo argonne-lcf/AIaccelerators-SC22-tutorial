@@ -73,7 +73,7 @@ The second step is to log in to a SambaNova node from the `login node`.
   * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
   * [bert_train-inf.sh](./bert//bert_train-inf.sh): contains driver code to run and profile BERT. 
   * For your convenience, these scripts are also available locally on each machine. 
-    Copy them to youyr `$HOME` directory. 
+    Copy them to your `$HOME` directory. 
     ```bash
     $ cp /var/tmp/Additional/slurm/Models/ANL_Acceptance_RC1_11_5/bert_train-inf.sh ~/
     ```
