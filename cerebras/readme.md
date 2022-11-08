@@ -32,7 +32,7 @@ To connect to a CS-2 ("chief") node:<br>
 * Login to CS-2:  
     ```bash
     ssh ALCFUserID@cerebras.alcf.anl.gov 
-    ssh cs2-01-med1
+    ssh cs2-01-master
     ```
 
 * Copy bert scripts to youyr `$HOME` directory. 
