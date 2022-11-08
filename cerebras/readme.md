@@ -60,3 +60,10 @@ To connect to a CS-2 ("chief") node:<br>
     $ rm -r $MODELDIR 
     $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     ```
+
+* **Run scripts on CS-2 with precompiled model:**
+* The model can be precompiled and the command line for running the model includes a "model_dir" 
+    ```bash
+    $ time -p csrun_cpu_01 python run.py --mode=train --compile_only --params configs/params_bert_large_msl128_sampleds.yaml --model_dir $MODELDIR --cs_ip $CS_IP
+    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_sampleds.yaml --model_dir $MODELDIR --cs_ip $CS_IP
+    ```
