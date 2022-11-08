@@ -33,7 +33,7 @@ The second step is to log in to a SambaNova node from the `login node`.
     $ ssh sm-02
     ```
 
-    **NOTE:** `sm-01` and `sm-02` each have a separate scheduler.  If you have already ssh'd into one of those nodes, you are all set.
+    **NOTE:** There is just one scheduler for both sm-01 and sm-02. Run the python scripts using srun or sbatch, to ensure that concurrent jobs do not interfere with each other.
 
 ## SambaFlow SDK setup
 
