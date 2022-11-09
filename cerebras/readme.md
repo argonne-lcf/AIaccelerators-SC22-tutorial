@@ -37,10 +37,9 @@ To connect to a CS-2 ("chief") node:<br>
 
 * Copy bert scripts to youyr `$HOME` directory. 
     ```bash
-    cp -r /software/cerebras/model_zoo ~/  
-    cd model_zoo/modelzoo/transformers/tf/bert  
+    cp -r /software/cerebras/model_zoo/modelzoo ~/  
+    cd modelzoo/transformers/tf/bert  
     ```
-    Note : Ignore any permissions errors during the copy of the subdirectory `modelzoo-R1.3.0_2/`.
 
 
 * Modify `data_dir` to `'/software/cerebras/dataset/bert_large/msl128/'` in `configs/params_bert_large_msl128.yaml`, **in two locations**.
