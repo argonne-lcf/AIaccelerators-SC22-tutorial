@@ -7,9 +7,9 @@
 
 ## Tentative Agenda 
 
-| Time        | Topic                                                 |
+| Time(CST)   | Topic                                                 |
 |-------------|-------------------------------------------------------|
-| 1.30 - 1.40 | Welcome and Overview of AI Testbed at ALCF (ANL)      |
+| 1.30 - 1.40 | Welcome and Overview of AI Testbed at ALCF, Murali Emani (ANL)      |
 | 1.40 - 3.00 | AI Accelerator Vendor Presentations                   |
 | 1.40 - 2.00 | Jiunn-Yeu Chen (Intel Habana)     |
 | 2.00 - 2.20 | Petro Junior Milan (SambaNova)        |
