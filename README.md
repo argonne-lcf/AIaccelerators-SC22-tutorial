@@ -5,7 +5,7 @@
 + **Location:** D161
 + **Description:** Scientific applications are increasingly adopting Artificial Intelligence (AI) techniques to advance science. There are specialized hardware accelerators designed and built to efficiently run AI applications. With diverse hardware and software stacks of these systems, it is challenging to comprehend their capabilities, programming approaches, and measure performance. In this tutorial, we will present an overview of novel AI accelerators namely, SambaNova, Cerebras, Graphcore, Groq, and Habana. This includes presentations on hardware and software features on each system. We present steps on how to program these systems by porting deep learning models with any refactoring of codes implemented in standard DL framework implementations, compiling and running on the accelerator hardware. Next, we conduct a hands-on session on SambaNova and Cerebras systems at ALCF AI Testbed. The tutorial will provide the attendees with an understanding of the key capabilities of emerging AI accelerators and their performance implications for scientific applications.
 
-## Tentative Agenda 
+## Tentative Agenda (to-do: add slides)
 
 | Time(CST)   | Topic                                                 |
 |-------------|-------------------------------------------------------|
@@ -26,6 +26,7 @@ Bidirectional Encoder Representations from Transformers (BERT) is a transformer-
 + [Cerebras](./cerebras/readme.md)
 + [Sambanova](./sambanova/readme.md)
 
+To-do: add instructions to use precompiled models and screenshots of the progress and output files
 
 ## Important Links 
 
