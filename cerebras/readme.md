@@ -66,3 +66,7 @@ To connect to a CS-2 ("chief") node:<br>
     $ time -p csrun_cpu python run.py --mode=train --compile_only --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     ```
+
+## Other Models 
+
+[Cerebras Model Zoo](https://github.com/Cerebras/modelzoo) repository contains examples of common deep learning models that can be trained on Cerebras hardware. These models demonstrate the best practices for coding a model targeted at the Cerebras hardware so that you can take full advantage of this new powerful compute engine.
