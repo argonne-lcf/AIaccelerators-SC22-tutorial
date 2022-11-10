@@ -30,41 +30,13 @@ To-do: add instructions to use precompiled models and screenshots of the progres
 
 ## Important Links 
 
-+ [SC22 Webpage](https://sc22.supercomputing.org/presentation/?id=tut151&sess=sess221)
-<!-- + [Tutorial Website](https://wordpress.cels.anl.gov/alcf-aitestbed-tutorial-sc22/) -->
-+ [Tutorial Repository](https://github.com/argonne-lcf/AIaccelerators-SC22-tutorial/)
++ [SC22 Tutorial Webpage](https://sc22.supercomputing.org/presentation/?id=tut151&sess=sess221)
++ [Github Tutorial Repository](https://github.com/argonne-lcf/AIaccelerators-SC22-tutorial/)
 + [Overviw of AI Testbeds at ALCF](https://www.alcf.anl.gov/alcf-ai-testbed)
 + [ALCF AI Testbed Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/)
++ [Director’s Discretionary Allocation Program](https://www.alcf.anl.gov/science/directors-discretionary-allocation-program)
 + [Join Slack Workspace](https://join.slack.com/t/aiacc-sc22-tut/shared_invite/zt-1i6r49ks1-9IxbIk6NM4TdHaEol26Z9Q)
 
 
-<!-- ## Login Information 
-
-+ How to login to CS-2 and SN systems 
-  + [Login Cerebras](./cerebras/cs-login.md)
-  + [Login Samabnova](./sambanova/sn-login.md)
-+ Director’s Discretionary Allocation Program
-  + [DD Allocation](https://www.alcf.anl.gov/science/directors-discretionary-allocation-program)
-
-## Experiments 
-
-+ Steps to submit a job and how to see the output
-  + [Cerebras](./cerebras/cs-job-submission.md)
-  + [Sambanova](./sambanova/sn-job-submission.md)
-+ Steps to train BERT-Large model
-  + [BERT on Cerebras](./cerebras/cs-bert.md)
-  + [BERT on Sambanova](./sambanova/sn-bert.md) -->
-
-
-<!-- 
-#ToDo (Sid)
-
-make readme files for cerebras and sambanova 
-add BERT code for cerebras and sambanova 
-add particular instructions to run BERT code 
-update scripts if necessary for SLURM 
-  pipelining vs weight streaming model 
-how much time it takes to compile and run the code on each sysyem? 
-  how can we reduce waiting time for users during tutorial?  -->
 
 
