@@ -24,49 +24,110 @@ To connect to a CS-2 ("chief") node:<br>
     ssh cs2-02-master
     ```
 
+# Steps to BERT-Large on CS-2
 
-# BERT (language model)
-
-* BERT Code is in the [Bert](./bert/) directory. For your convenience, these scripts are also available locally. 
-
-* Login to CS-2:  
+1. Login to CS-2 login node. 
     ```bash
-    ssh ALCFUserID@cerebras.alcf.anl.gov 
-    ssh cs2-01-master
+      $ ssh ALCFUserID@cerebras.alcf.anl.gov 
+      $ ssh cs2-01-master or $ ssh cs2-02-master
     ```
 
-* Copy bert scripts to your `$HOME` directory. 
+2. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
+   Copy BERT code to youyr `$HOME` directory. 
     ```bash
-    cp -r /software/cerebras/model_zoo/modelzoo ~/  
-    cd modelzoo/transformers/tf/bert  
+    $ cp -r /projects/aitestbed_training/CS-2/bert ~/  
+    $ cd bert  
     ```
 
+3. Connect to the one of the destination CS-2 chief node:  
+    ```bash
+    $ ssh cs2-01-master 
+    or 
+    $ ssh cs2-02-master
+    ```
 
-* Modify `data_dir` to `'/software/cerebras/dataset/bert_large/msl128/'` in `configs/params_bert_large_msl128.yaml`, **in two locations**.
-  * Refer to config file [here](./bert/configs/params_bert_large_msl128.yaml) for reference.
-
-* The CS-2 systems use slurm for job submission and queueing. Please refer to [Cerebras Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Job-Queuing-and-Submission/index.html) for further details. 
+4. The CS-2 systems use SLURM for job submission and queueing. Please refer to [Cerebras Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Job-Queuing-and-Submission/index.html) for further details. 
   
-  * **Run scripts on CPU:**   `csrun_cpu` is used to run a cpu-only job on one or more worker nodes.
+  * **Run scripts on CPU:**  
+   `csrun_cpu` is used to run a cpu-only job on one or more worker nodes.
+
     ```bash
     $ MODELDIR=model_dir_bert_large_msl128_$(hostname)  
     $ rm -r $MODELDIR  
     $ time -p csrun_cpu python run.py --mode=train --compile_only --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP  
     ```
-  * **Run scripts on CS-2:** `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
+    This will take approximately `#todo` minutes to run. Here is the sample outout 
+
+    <details>
+    <summary>Click for Sample Output</summary>
+
+    ```bash
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    ```
+
+    </details>
+
+
+  * **Run scripts on CS-2:** 
+  `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
+
     ```bash
     $ MODELDIR=model_dir_bert_large_msl128_$(hostname)  
     $ rm -r $MODELDIR 
     $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     ```
+    
+    This will take approximately `#todo` minutes to run. Here is the sample outout 
+
+    <details>
+    <summary>Click for Sample Output</summary>
+
+    ```bash
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    ```
+
+    </details>
+
+    * **Note** : The above command uses `params_bert_large_msl128_quick.yaml` config file that runs BERT for 9000 steps to reduce executiuon time during the period of tutorial.  
+    The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run.
 
 * **Run scripts on CS-2 with precompiled model:**
-* The model can be precompiled and the command line for running the model includes a "model_dir" 
+To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`
+
     ```bash
     $ time -p csrun_cpu python run.py --mode=train --compile_only --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     ```
+    This will take approximately `#todo` minutes to run. Here is the sample outout 
+
+    <details>
+    <summary>Click for Sample Output</summary>
+
+    ```bash
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    ```
+
+    </details>
+
 
 ## Other Models 
 
 [Cerebras Model Zoo](https://github.com/Cerebras/modelzoo) repository contains examples of common deep learning models that can be trained on Cerebras hardware. These models demonstrate the best practices for coding a model targeted at the Cerebras hardware so that you can take full advantage of this new powerful compute engine.
+
+
+
+
+
+
