@@ -24,12 +24,11 @@ To connect to a CS-2 ("chief") node:<br>
     ssh cs2-02-master
     ```
 
-# Steps to BERT-Large on CS-2
+# Steps to run BERT-Large on CS-2
 
 1. Login to CS-2 login node. 
     ```bash
       $ ssh ALCFUserID@cerebras.alcf.anl.gov 
-      $ ssh cs2-01-master or $ ssh cs2-02-master
     ```
 
 2. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
@@ -100,7 +99,7 @@ To connect to a CS-2 ("chief") node:<br>
     The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run.
 
 * **Run scripts on CS-2 with precompiled model:**
-To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`
+To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
 
     ```bash
     $ time -p csrun_cpu python run.py --mode=train --compile_only --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP

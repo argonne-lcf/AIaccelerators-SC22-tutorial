@@ -84,4 +84,70 @@ The second step is to log in to a SambaNova node from the `login node`.
     $ srun bert_train-inf.sh
     ```
 
-<!-- * The sample output of `bert_train-inf.sh` can be found in [bert_output.txt](./bert_output.txt) -->
+
+# Steps to run BERT-Large on Sambanova
+
+1. Login to Sambanova login node. 
+    ```bash
+      $ ssh ALCFUserID@sambanova.alcf.anl.gov
+    ```
+
+2. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
+   Copy BERT code to youyr `$HOME` directory. 
+    ```bash
+    $ cp -r /projects/aitestbed_training/SN/bert ~/  
+    $ cd bert  
+    ```
+    * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
+    * [bert_train-inf.sh](./bert//bert_train-inf.sh): contains driver code to run and profile BERT. 
+
+3. Connect to the one of the destination Sambanova nodes:  
+    ```bash
+    $ ssh sm-01 
+    or 
+    $ ssh sm-02
+    ```
+
+4. SambaNova uses SLURM for job submission and queueing. We will use `srun` to submit our job to job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. 
+  
+    ```bash
+    $ cd ~
+    $ srun bert_train-inf.sh
+    ```
+
+    <details>
+    <summary>Click for Sample Output</summary>
+
+    ```bash
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    ```
+
+    </details>
+
+
+* **Run precompiled model:**
+To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/SN/precompiled_bert`. Here are commands to run it. 
+
+    ```bash
+    $ TODO
+    ```
+    This will take approximately `#todo` minutes to run. Here is the sample outout 
+
+    <details>
+    <summary>Click for Sample Output</summary>
+
+    ```bash
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    ```
+
+    </details>
+
+
