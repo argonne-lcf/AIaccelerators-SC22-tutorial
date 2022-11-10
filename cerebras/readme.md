@@ -35,7 +35,7 @@ To connect to a CS-2 ("chief") node:<br>
     ssh cs2-01-master
     ```
 
-* Copy bert scripts to youyr `$HOME` directory. 
+* Copy bert scripts to your `$HOME` directory. 
     ```bash
     cp -r /software/cerebras/model_zoo/modelzoo ~/  
     cd modelzoo/transformers/tf/bert  
