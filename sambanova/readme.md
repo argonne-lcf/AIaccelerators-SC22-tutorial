@@ -190,6 +190,24 @@ To further reduce the execution time we have precompiled model. For your convene
     </details>
     
     <details>
+    <summary>Click for sample train_steps.txt</summary>
+
+    ```bash
+    5
+    10
+    15
+    20
+    25
+    30
+    35
+    40
+    45
+    50
+    ```
+
+    </details>
+    
+    <details>
     <summary>Click for sample step_loss.txt</summary>
 
     ```bash
