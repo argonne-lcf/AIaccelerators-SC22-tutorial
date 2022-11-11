@@ -123,7 +123,7 @@ To further reduce the execution time we have precompiled model. For your convene
 
 ## Other Models 
 
-[Cerebras Model Zoo](https://github.com/Cerebras/modelzoo) repository contains examples of common deep learning models that can be trained on Cerebras hardware. These models demonstrate the best practices for coding a model targeted at the Cerebras hardware so that you can take full advantage of this new powerful compute engine.
+[Cerebras Model Zoo](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) repository contains examples of common deep learning models that can be trained on Cerebras hardware. These models demonstrate the best practices for coding a model targeted at the Cerebras hardware so that you can take full advantage of this new powerful compute engine.
 
 
 
