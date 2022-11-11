@@ -161,11 +161,9 @@ To further reduce the execution time we have precompiled model. For your convene
       $ cd pretrain/
       ```
 
-2. In `submit-bert-pretrain-job-LBS1024.sh`:
-    * Change `OUTDIR` to location of the bash script. Example:
-    * (optional) change values for steps_this_run and logging_steps in both RUN and PERF commands. Example:
+2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the bash script you just copied. Example: `OUTDIR=$HOME/pretrain`
 
-3. Submit your job (2 RDUs are used here). Example: 
+3. Submit your job (2 RDUs are used here, and 8 cores per task). Example: 
 
    ```bash
       $ sbatch --output=log_bert_pretrain_LBS1024_np2.out --gres=rdu:2 -c 8 submit-bert-pretrain-job-LBS1024.sh
@@ -173,3 +171,25 @@ To further reduce the execution time we have precompiled model. For your convene
 4. You can follow the status of your job using: `squeue`. The job should take about 5 min to complete.
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
+
+# Fine-tuning using 1 RDU:
+
+1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
+
+   ```bash
+      $ cd $HOME
+      $ mkdir finetune
+      $ cp /projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh finetune/
+      $ cd finetune/
+      ```
+
+2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the bash script you just copied. Example: `OUTDIR=$HOME/finetune`
+
+3. Submit your job (1 RDU is used here). Example: 
+
+   ```bash
+      $ sbatch --output=log_bert_squad.out --gres=rdu:1 -c 8 submit-bert-squad-job.sh
+      ```
+4. You can follow the status of your job using: `squeue`. The job should take about 20 min to complete. Note: for finetuning, data is not pre-tokenized and will be tokenized on the fly, that is why the job is taking longer to complete.
+
+5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
