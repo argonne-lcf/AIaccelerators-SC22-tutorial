@@ -109,48 +109,8 @@ The second step is to log in to a SambaNova node from the `login node`.
     or 
     $ ssh sm-02
     ```
-
-4. SambaNova uses SLURM for job submission and queueing. We will use `srun` to submit our job to job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. 
-  
-    ```bash
-    $ cd ~
-    $ srun bert_train-inf.sh
-    ```
-
-    <details>
-    <summary>Click for Sample Output</summary>
-
-    ```bash
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    ```
-
-    </details>
-
-
-* **Run precompiled model:**
-To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/SN/precompiled_bert`. Here are commands to run it. 
-
-    ```bash
-    $ TODO
-    ```
-    This will take approximately `#todo` minutes to run. Here is the sample outout 
-
-    <details>
-    <summary>Click for Sample Output</summary>
-
-    ```bash
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    ```
-
-    </details>
+    
+4.     
 
 ## Pretraining in data parallel mode
 
@@ -253,7 +213,24 @@ Note: for the sake of the tutorial, we have precompiled the model to reduce the 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
 
     <details>
-    <summary>Click for sample eval_results_squad.txt</summary>
+    <summary>Click for sample log_history.json</summary>
+
+    ```bash
+    [
+      {
+         "exact": 54.33301797540208,
+         "f1": 66.54507382283774,
+         "epoch": 0.07965242577842144,
+         "total_flos": 5419063617454080,
+         "step": 220
+       }
+    ]    
+    ```
+
+    </details>
+    
+    <details>
+    <summary>Click for sample leval_results_squad.txt</summary>
 
     ```bash
     exact = 54.33301797540208
