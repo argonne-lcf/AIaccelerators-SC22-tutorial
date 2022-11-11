@@ -202,7 +202,7 @@ The second step is to log in to a SambaNova node from the `login node`.
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
 
     <details>
-    <summary>Click for sample hf_output_squad_run/log_history.json</summary>
+    <summary>Click for sample log_history.json</summary>
 
     ```bash
     [
@@ -219,7 +219,7 @@ The second step is to log in to a SambaNova node from the `login node`.
     </details>
     
     <details>
-    <summary>Click for hf_output_squad_run/sample eval_results_squad.txt</summary>
+    <summary>Click for sample eval_results_squad.txt</summary>
 
     ```bash
     exact = 54.33301797540208
