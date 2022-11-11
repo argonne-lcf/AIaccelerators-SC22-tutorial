@@ -154,6 +154,8 @@ To further reduce the execution time we have precompiled model. For your convene
 
 ## Pretraining in data parallel mode
 
+Note: for the sake of the tutorial, we have precompiled the model to reduce the execution time. 
+
 1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Then, go to that folder. Example:
 
    ```bash
@@ -226,6 +228,8 @@ To further reduce the execution time we have precompiled model. For your convene
     </details>
 
 ## Fine-tuning for question answering using 1 RDU
+
+Note: for the sake of the tutorial, we have precompiled the model to reduce the execution time. 
 
 1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
 
