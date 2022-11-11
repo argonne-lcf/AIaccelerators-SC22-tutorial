@@ -167,7 +167,7 @@ Note: for the sake of the tutorial, we have precompiled the model to reduce the 
 
 2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the pretrain folder. Example: `OUTDIR=$HOME/pretrain`
 
-3. Submit your job (2 RDUs are used here). Example: 
+3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 2 RDUs are used:
 
    ```bash
       $ sbatch --output=log_bert_pretrain_LBS1024_np2.out --gres=rdu:2 -c 8 submit-bert-pretrain-job-LBS1024.sh
@@ -242,7 +242,7 @@ Note: for the sake of the tutorial, we have precompiled the model to reduce the 
 
 2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the finetune folder. Example: `OUTDIR=$HOME/finetune`
 
-3. Submit your job (1 RDU is used here). Example: 
+3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 1 RDU is used: 
 
    ```bash
       $ sbatch --output=log_bert_squad.out --gres=rdu:1 -c 8 submit-bert-squad-job.sh
