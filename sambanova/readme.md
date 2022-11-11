@@ -176,7 +176,7 @@ To further reduce the execution time we have precompiled model. For your convene
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
 
-## Fine-tuning for question answering using 1 RDU:
+## Fine-tuning for question answering using 1 RDU
 
 1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
 
@@ -198,3 +198,5 @@ To further reduce the execution time we have precompiled model. For your convene
 4. You can follow the status of your job using: `squeue`. The job should take about 20 min to complete. Note: for finetuning, data is not pre-tokenized and will be tokenized on the fly, that is why the job is taking longer to complete.
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
+
+# Other Models and Use-cases
