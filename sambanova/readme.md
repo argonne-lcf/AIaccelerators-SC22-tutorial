@@ -161,13 +161,15 @@ To further reduce the execution time we have precompiled model. For your convene
       $ cd pretrain/
       ```
 
-2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the bash script you just copied. Example: `OUTDIR=$HOME/pretrain`
+2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the pretrain folder. Example: `OUTDIR=$HOME/pretrain`
 
-3. Submit your job (2 RDUs are used here, and 8 cores per task). Example: 
+3. Submit your job (2 RDUs are used here). Example: 
 
    ```bash
       $ sbatch --output=log_bert_pretrain_LBS1024_np2.out --gres=rdu:2 -c 8 submit-bert-pretrain-job-LBS1024.sh
       ```
+   Note: `-c` represents the number of cores per task  
+      
 4. You can follow the status of your job using: `squeue`. The job should take about 5 min to complete.
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
@@ -183,13 +185,14 @@ To further reduce the execution time we have precompiled model. For your convene
       $ cd finetune/
       ```
 
-2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the bash script you just copied. Example: `OUTDIR=$HOME/finetune`
+2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the finetune folder. Example: `OUTDIR=$HOME/finetune`
 
 3. Submit your job (1 RDU is used here). Example: 
 
    ```bash
       $ sbatch --output=log_bert_squad.out --gres=rdu:1 -c 8 submit-bert-squad-job.sh
       ```
+      
 4. You can follow the status of your job using: `squeue`. The job should take about 20 min to complete. Note: for finetuning, data is not pre-tokenized and will be tokenized on the fly, that is why the job is taking longer to complete.
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
