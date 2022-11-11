@@ -150,4 +150,13 @@ To further reduce the execution time we have precompiled model. For your convene
 
     </details>
 
+# Pretraining in data parallel mode
 
+1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Example:
+
+   ```bash
+      $ cd $HOME
+      $ mkdir pretrain
+      $ cp /projects/aitestbed_training/SN/precompiled_bert/submit-bert-pretrain-job-LBS1024.sh $HOME/pretrain/
+      $ cd $HOME/pretrain
+      ```
