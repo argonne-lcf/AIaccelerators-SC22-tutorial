@@ -186,7 +186,7 @@ The second step is to log in to a SambaNova node from the `login node`.
    $ cd finetune/
    ```
    
-2. Copy the processed dataset to the finetune repo.
+2. Copy the processed dataset to the finetune repo. This will avoid tokenizing the dataset on the fly.
    ```bash
    $ cp -r /projects/aitestbed_training/SN/precompiled_bert/squad_cache ./
    ```
@@ -203,7 +203,7 @@ The second step is to log in to a SambaNova node from the `login node`.
    $ sbatch --output=log_bert_squad.out --gres=rdu:1 -c 8 submit-bert-squad-job.sh
    ```
       
-5. You can follow the status of your job using: `squeue`. The job should take about 20 min to complete. Note: for finetuning, data is not pre-tokenized and will be tokenized on the fly, that is why the job is taking longer to complete.
+5. You can follow the status of your job using: `squeue`. The job should take about 8 min to complete.
 
 6. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
 
