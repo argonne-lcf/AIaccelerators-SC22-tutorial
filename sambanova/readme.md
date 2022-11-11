@@ -176,6 +176,37 @@ To further reduce the execution time we have precompiled model. For your convene
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
 
+    <details>
+    <summary>Click for sample throughput</summary>
+
+    ```bash
+    Measuring peformance with world size:  2
+    initial run starts.
+    initial run completes.
+    e2e_latency: 30.863351583480835 seconds, throughput: 663.5701875930295 samples/s, measured over 10 iterations.
+    NOTE: This is the combined throughput for 2 workers
+    ```
+
+    </details>
+    
+    <details>
+    <summary>Click for sample step_loss.txt</summary>
+
+    ```bash
+    11.28628
+    11.16291
+    10.97120
+    10.76511
+    10.58944
+    10.44571
+    10.29387
+    10.16663
+    10.09081
+    9.98203
+    ```
+
+    </details>
+
 ## Fine-tuning for question answering using 1 RDU
 
 1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
