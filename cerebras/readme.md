@@ -60,7 +60,7 @@ To further reduce the execution time we have precompiled model. For your convene
     $ MODELDIR=$HOME/precompiled_bert
     $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     ```
-   This will take approximately `#todo` minutes to run. Here is the sample outout 
+   This will take approximately `#todo` minutes to run. Here is the sample output 
 
    <details>
    <summary>Click for Sample Output</summary>
@@ -85,7 +85,7 @@ To further reduce the execution time we have precompiled model. For your convene
     $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir $MODELDIR --cs_ip $CS_IP
     ```
     
-    This will take approximately `#todo` minutes to run. Here is the sample outout 
+    This will take approximately `#todo` minutes to run. Here is the sample output 
 
     <details>
     <summary>Click for Sample Output</summary>
@@ -111,7 +111,7 @@ To further reduce the execution time we have precompiled model. For your convene
     $ rm -r $MODELDIR  
     $ time -p csrun_cpu python run.py --mode=train --compile_only --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP  
     ```
-    This will take approximately `#todo` minutes to run. Here is the sample outout 
+    This will take approximately `#todo` minutes to run. Here is the sample output 
 
     <details>
     <summary>Click for Sample Output</summary>
@@ -129,7 +129,7 @@ To further reduce the execution time we have precompiled model. For your convene
 
 ## Other Models and Use-cases 
 
-* See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (e.g., UNet, BragNN etc)
+* See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) for instructions to run other well-known AI applications on Cerebras hardware (e.g., UNet, BragNN etc)
 
 
 
