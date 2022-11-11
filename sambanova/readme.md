@@ -67,6 +67,9 @@ The second step is to log in to a SambaNova node from the `login node`.
     $ deactivate
     ```
 
+
+# Steps to run BERT-Large on Sambanova
+
 ## BERT-Large on Sambanova
 
 * BERT Code is in the [Bert](./bert/) directory here.  
@@ -83,9 +86,6 @@ The second step is to log in to a SambaNova node from the `login node`.
     $ cd ~
     $ srun bert_train-inf.sh
     ```
-
-
-# Steps to run BERT-Large on Sambanova
 
 ## Getting started
 
@@ -238,3 +238,4 @@ The second step is to log in to a SambaNova node from the `login node`.
 # Other Models and Use-cases
 
 * See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (e.g., LeNet, FFN-MNIST, logistic regression, UNet)
+* Other resources for BERT-Large
