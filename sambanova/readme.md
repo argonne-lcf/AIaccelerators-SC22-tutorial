@@ -152,11 +152,24 @@ To further reduce the execution time we have precompiled model. For your convene
 
 # Pretraining in data parallel mode
 
-1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Example:
+1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Then, go to that folder. Example:
 
    ```bash
       $ cd $HOME
       $ mkdir pretrain
-      $ cp /projects/aitestbed_training/SN/precompiled_bert/submit-bert-pretrain-job-LBS1024.sh $HOME/pretrain/
-      $ cd $HOME/pretrain
+      $ cp /projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh pretrain/
+      $ cd pretrain/
       ```
+
+2. In `submit-bert-pretrain-job-LBS1024.sh`:
+    * Change `OUTDIR` to location of the bash script. Example:
+    * (optional) change values for steps_this_run and logging_steps in both RUN and PERF commands. Example:
+
+3. Submit your job (2 RDUs are used here). Example: 
+
+   ```bash
+      $ sbatch --output=log_bert_pretrain_LBS1024_np2.out --gres=rdu:2 -c 8 submit-bert-pretrain-job-LBS1024.sh
+      ```
+4. You can follow the status of your job using: `squeue`. The job should take about 5 min to complete.
+
+5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
