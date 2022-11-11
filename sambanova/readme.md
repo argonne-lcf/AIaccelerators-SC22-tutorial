@@ -233,6 +233,10 @@ The second step is to log in to a SambaNova node from the `login node`.
 # Other Models and Use-cases
 
 * See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (e.g., LeNet, FFN-MNIST, logistic regression, UNet)
+* Full execution scripts (compile, run, measure-perf) for BERT-Large can be found under `/projects/aitestbed_training/SN/full_execution_bert/bash_scripts`:
+  * `submit-bert-pretrain-job.sh`: pretraining job with 8 RDUs and LBS=256
+  * `submit-bert-squad-job.sh`: fine-tuning job for question answering with 1 RDU 
+
 * Full execution scripts (compile, run, measure-perf) for BERT-Large can be found under: 
   * [bert_train-inf.sh](./bert//bert_train-inf.sh): contains driver code to run and profile BERT. 
   * For your convenience, these scripts are also available locally on each machine. 
