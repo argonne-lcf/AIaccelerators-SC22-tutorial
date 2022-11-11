@@ -17,37 +17,93 @@ To connect to a CS-2 ("chief") node:<br>
     ```bash
     ssh ALCFUserID@cerebras.alcf.anl.gov
     ```
-2. From the login node, ssh to the destination CS-2 chief node:
+<!-- 2. From the login node, ssh to the destination CS-2 chief node:
     ```bash
     ssh cs2-01-master
    # or
     ssh cs2-02-master
-    ```
+    ``` -->
 
 # Steps to run BERT-Large on CS-2
 
-1. Login to CS-2 login node. 
+<!-- 1. Login to CS-2 login node. 
     ```bash
       $ ssh ALCFUserID@cerebras.alcf.anl.gov 
-    ```
+    ``` -->
 
-2. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
+1. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
    Copy BERT code to youyr `$HOME` directory. 
     ```bash
-    $ cp -r /projects/aitestbed_training/CS-2/bert ~/  
+    $ cp -r /projects/aitestbed_training/CS-2/model_zoo ~/  
     $ cd bert  
     ```
 
-3. Connect to the one of the destination CS-2 chief node:  
+2. Connect to the one of the destination CS-2 chief node:  
     ```bash
     $ ssh cs2-01-master 
     or 
     $ ssh cs2-02-master
     ```
 
-4. The CS-2 systems use SLURM for job submission and queueing. Please refer to [Cerebras Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Job-Queuing-and-Submission/index.html) for further details. 
+3. The CS-2 systems use SLURM for job submission and queueing. Please refer to [Cerebras Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Job-Queuing-and-Submission/index.html) for further details. 
   
-  * **Run scripts on CPU:**  
+  
+* **Run scripts on CS-2 with Pre-Compiled Model:**
+To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
+
+  * Copy precompiled model direcotry to your `$HOME` directory. 
+    ```bash
+    $ cp -r /projects/aitestbed_training/CS-2/precompiled_bert ~
+    ```
+  * `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
+    ```bash
+    $ MODELDIR=$HOME/precompiled_bert
+    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir $MODELDIR --cs_ip $CS_IP
+    ```
+   This will take approximately `#todo` minutes to run. Here is the sample outout 
+
+   <details>
+   <summary>Click for Sample Output</summary>
+
+   ```bash
+   $ ToDo
+   $ ToDo
+   $ ToDo
+   $ ToDo
+   $ ToDo
+   ```
+
+   </details>
+  
+  * **Run scripts on CS-2:** 
+  We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for 100 steps to reduce executiuon time during the period of tutorial.  
+  `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
+
+    ```bash
+    $ MODELDIR=model_dir_bert_large_msl128_$(hostname)  
+    $ rm -r $MODELDIR 
+    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir $MODELDIR --cs_ip $CS_IP
+    ```
+    
+    This will take approximately `#todo` minutes to run. Here is the sample outout 
+
+    <details>
+    <summary>Click for Sample Output</summary>
+
+    ```bash
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    $ ToDo
+    ```
+
+    </details>
+
+    * **Note** : 
+    The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run.
+
+  <!-- * **Run scripts on CPU:**  
    `csrun_cpu` is used to run a cpu-only job on one or more worker nodes.
 
     ```bash
@@ -68,62 +124,14 @@ To connect to a CS-2 ("chief") node:<br>
     $ ToDo
     ```
 
-    </details>
+    </details> -->
 
 
-  * **Run scripts on CS-2:** 
-  `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
+## Other Models and Use-cases 
 
-    ```bash
-    $ MODELDIR=model_dir_bert_large_msl128_$(hostname)  
-    $ rm -r $MODELDIR 
-    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
-    ```
-    
-    This will take approximately `#todo` minutes to run. Here is the sample outout 
-
-    <details>
-    <summary>Click for Sample Output</summary>
-
-    ```bash
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    ```
-
-    </details>
-
-    * **Note** : The above command uses `params_bert_large_msl128_quick.yaml` config file that runs BERT for 9000 steps to reduce executiuon time during the period of tutorial.  
-    The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run.
-
-* **Run scripts on CS-2 with precompiled model:**
-To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
-
-    ```bash
-    $ time -p csrun_cpu python run.py --mode=train --compile_only --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
-    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir $MODELDIR --cs_ip $CS_IP
-    ```
-    This will take approximately `#todo` minutes to run. Here is the sample outout 
-
-    <details>
-    <summary>Click for Sample Output</summary>
-
-    ```bash
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    ```
-
-    </details>
+* See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (e.g., UNet, BragNN etc)
 
 
-## Other Models 
-
-[Cerebras Model Zoo](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) repository contains examples of common deep learning models that can be trained on Cerebras hardware. These models demonstrate the best practices for coding a model targeted at the Cerebras hardware so that you can take full advantage of this new powerful compute engine.
 
 
 
