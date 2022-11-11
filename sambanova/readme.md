@@ -19,7 +19,7 @@ The second step is to log in to a SambaNova node from the `login node`.
 
     ```bash
     $ ssh ALCFUserID@sambanova.alcf.anl.gov
-    ALCFUserID@sambanova.alcf.anl.govs password: < MobilePass+ code >
+    ALCFUserID@sambanova.alcf.anl.gov password: < MobilePass+ code >
     ```
 
     Note: Use the ssh "-v" option in order to debug any ssh problems.
