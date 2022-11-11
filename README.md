@@ -5,7 +5,7 @@
 + **Location:** D161
 + **Description:** Scientific applications are increasingly adopting Artificial Intelligence (AI) techniques to advance science. There are specialized hardware accelerators designed and built to efficiently run AI applications. With diverse hardware and software stacks of these systems, it is challenging to comprehend their capabilities, programming approaches, and measure performance. In this tutorial, we will present an overview of novel AI accelerators namely, SambaNova, Cerebras, Graphcore, Groq, and Habana. This includes presentations on hardware and software features on each system. We present steps on how to program these systems by porting deep learning models with any refactoring of codes implemented in standard DL framework implementations, compiling and running on the accelerator hardware. Next, we conduct a hands-on session on SambaNova and Cerebras systems at ALCF AI Testbed. The tutorial will provide the attendees with an understanding of the key capabilities of emerging AI accelerators and their performance implications for scientific applications.
 
-## Tentative Agenda (to-do: add slides)
+## Agenda
 
 | Time(CST)   | Topic                                                 |
 |-------------|-------------------------------------------------------|
@@ -19,6 +19,7 @@
 | 3.30 - 3.50 | Alex Tsyplikhin (Graphcore)                           |
 | 3.50 - 5.00 | Hands on Session with Cerebras and Sambanova          |
 
+The presentation slides are available at [here](https://anl.box.com/s/0wltiw52s9yuf0d3gzhjlhgyi841yua1). 
 
 ## BERT-Large on AI Accelerators
 Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on AI testbeds:
