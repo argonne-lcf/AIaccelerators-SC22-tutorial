@@ -252,6 +252,18 @@ Note: for the sake of the tutorial, we have precompiled the model to reduce the 
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
 
+    <details>
+    <summary>Click for sample eval_results_squad.txt</summary>
+
+    ```bash
+    exact = 54.33301797540208
+    f1 = 66.54507382283774
+    epoch = 0.07965242577842144
+    total_flos = 5419063617454080
+    ```
+
+    </details>
+
 # Other Models and Use-cases
 
 * See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (LeNet, FFN-MNIST, logistic regression, UNet)
