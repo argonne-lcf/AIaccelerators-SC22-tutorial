@@ -238,4 +238,4 @@ The second step is to log in to a SambaNova node from the `login node`.
 # Other Models and Use-cases
 
 * See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (e.g., LeNet, FFN-MNIST, logistic regression, UNet)
-* Other resources for BERT-Large
+* Full execution scripts (compile, run, measure-perf) for BERT-Large can be found under: 
