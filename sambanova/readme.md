@@ -126,7 +126,7 @@ The second step is to log in to a SambaNova node from the `login node`.
    ```
    Note: `-c` represents the number of cores per task  
       
-4. You can follow the status of your job using: `squeue`. The job should take about 5 min to complete.
+4. You can follow the status of your job using: `squeue`. The job should take about 8 min to complete.
 
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
 
@@ -137,8 +137,9 @@ The second step is to log in to a SambaNova node from the `login node`.
     Measuring peformance with world size:  2
     initial run starts.
     initial run completes.
-    e2e_latency: 30.863351583480835 seconds, throughput: 663.5701875930295 samples/s, measured over 10 iterations.
+    e2e_latency: 30.75621747970581 seconds, throughput: 665.8816225861821 samples/s, measured over 10 iterations.
     NOTE: This is the combined throughput for 2 workers
+    total duration: 30.75621747970581 s
     ```
 
     </details>
@@ -147,16 +148,16 @@ The second step is to log in to a SambaNova node from the `login node`.
     <summary>Click for sample train_steps.txt</summary>
 
     ```bash
-    5
     10
-    15
     20
-    25
     30
-    35
     40
-    45
     50
+    60
+    70
+    80
+    90
+    100
     ```
 
     </details>
@@ -165,16 +166,16 @@ The second step is to log in to a SambaNova node from the `login node`.
     <summary>Click for sample step_loss.txt</summary>
 
     ```bash
-    11.28628
     11.16291
-    10.97120
     10.76511
-    10.58944
     10.44571
-    10.29387
     10.16663
-    10.09081
     9.98203
+    9.85561
+    9.76017
+    9.66340
+    9.57864
+    9.50137
     ```
 
     </details>
