@@ -68,7 +68,7 @@ The second step is to log in to a SambaNova node from the `login node`.
     ```
 
 
-# Steps to run BERT-Large on Sambanova
+# Steps to run BERT-Large on Sambanova DataScale SN10-8R
 
 * BERT Code is in the [Bert](./bert/) directory here.  
   * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
