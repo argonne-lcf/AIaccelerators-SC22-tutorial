@@ -85,7 +85,7 @@ The second step is to log in to a SambaNova node from the `login node`.
 
 1. Login to Sambanova login node. 
     ```bash
-      $ ssh ALCFUserID@sambanova.alcf.anl.gov
+    $ ssh ALCFUserID@sambanova.alcf.anl.gov
     ```
 
 2. Connect to the one of the destination Sambanova nodes:  
@@ -107,23 +107,23 @@ The second step is to log in to a SambaNova node from the `login node`.
 1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Then, go to that folder. Example:
 
    ```bash
-      $ cd $HOME
-      $ mkdir pretrain
-      $ cp /projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh pretrain/
-      $ cd pretrain/
-      ```
+   $ cd $HOME
+   $ mkdir pretrain
+   $ cp /projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh pretrain/
+   $ cd pretrain/
+   ```
 
 2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the pretrain folder. Example: 
 
    ```bash
-      OUTDIR=$HOME/pretrain
-      ```
+   OUTDIR=$HOME/pretrain
+   ```
 
 3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 2 RDUs are used:
 
    ```bash
-      $ sbatch --output=log_bert_pretrain_LBS1024_np2.out --gres=rdu:2 -c 8 submit-bert-pretrain-job-LBS1024.sh
-      ```
+   $ sbatch --output=log_bert_pretrain_LBS1024_np2.out --gres=rdu:2 -c 8 submit-bert-pretrain-job-LBS1024.sh
+   ```
    Note: `-c` represents the number of cores per task  
       
 4. You can follow the status of your job using: `squeue`. The job should take about 5 min to complete.
@@ -186,23 +186,23 @@ The second step is to log in to a SambaNova node from the `login node`.
 1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
 
    ```bash
-      $ cd $HOME
-      $ mkdir finetune
-      $ cp /projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh finetune/
-      $ cd finetune/
-      ```
+   $ cd $HOME
+   $ mkdir finetune
+   $ cp /projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh finetune/
+   $ cd finetune/
+   ```
 
 2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the finetune folder. Example: 
 
    ```bash
-      OUTDIR=$HOME/finetune
-      ``` 
+   OUTDIR=$HOME/finetune
+   ``` 
 
 3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 1 RDU is used: 
 
    ```bash
-      $ sbatch --output=log_bert_squad.out --gres=rdu:1 -c 8 submit-bert-squad-job.sh
-      ```
+   $ sbatch --output=log_bert_squad.out --gres=rdu:1 -c 8 submit-bert-squad-job.sh
+   ```
       
 4. You can follow the status of your job using: `squeue`. The job should take about 20 min to complete. Note: for finetuning, data is not pre-tokenized and will be tokenized on the fly, that is why the job is taking longer to complete.
 
