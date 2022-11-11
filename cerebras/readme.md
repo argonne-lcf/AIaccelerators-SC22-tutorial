@@ -2,7 +2,7 @@
 
 ## On Boarding 
 
-Follow steps 1 and 2 on [ALCF AI Testbed User Guide]("https://www.alcf.anl.gov/support-center/get-started") to request an account.
+See [ALCF AI Testbed User Guide](https://www.alcf.anl.gov/support-center/get-started) to request an account and additional information.
 
 ## System View
 
