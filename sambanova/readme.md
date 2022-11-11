@@ -94,27 +94,21 @@ The second step is to log in to a SambaNova node from the `login node`.
       $ ssh ALCFUserID@sambanova.alcf.anl.gov
     ```
 
-2. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
-   Copy BERT code to youyr `$HOME` directory. 
-    ```bash
-    $ cp -r /projects/aitestbed_training/SN/bert ~/  
-    $ cd bert  
-    ```
-    * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
-    * [bert_train-inf.sh](./bert//bert_train-inf.sh): contains driver code to run and profile BERT. 
-
-3. Connect to the one of the destination Sambanova nodes:  
+2. Connect to the one of the destination Sambanova nodes:  
     ```bash
     $ ssh sm-01 
     or 
     $ ssh sm-02
     ```
     
-4.     
+3. Set up the required software environment. Do:
+     ```bash
+    $ source /software/sambanova/envs/sn_env.sh
+    ```
 
 ## Pretraining in data parallel mode
 
-Note: for the sake of the tutorial, we have precompiled the model to reduce the execution time. 
+**Note**: for the sake of the tutorial, we have precompiled the model to reduce the execution time. 
 
 1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Then, go to that folder. Example:
 
@@ -189,7 +183,7 @@ Note: for the sake of the tutorial, we have precompiled the model to reduce the 
 
 ## Fine-tuning for question answering using 1 RDU
 
-Note: for the sake of the tutorial, we have precompiled the model to reduce the execution time. 
+**Note**: for the sake of the tutorial, we have precompiled the model to reduce the execution time. 
 
 1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
 
