@@ -238,7 +238,7 @@ The second step is to log in to a SambaNova node from the `login node`.
 
 # Other Models and Use-cases
 
-* Full execution scripts (compile, run, measure-perf) for BERT-Large can be found under `/projects/aitestbed_training/SN/full_execution_bert/bash_scripts`. Note: these are the scripts used in the SN pre-recorded demo video. 
+* Full execution scripts (compile, run, measure-perf) for BERT-Large can be found under `/projects/aitestbed_training/SN/full_execution_bert/bash_scripts`.
   * `submit-bert-pretrain-job.sh`: bash script for pretraining job with 8 RDUs and LBS=256
   * `submit-bert-squad-job.sh`: bash script for fine-tuning job for question answering with 1 RDU 
 
