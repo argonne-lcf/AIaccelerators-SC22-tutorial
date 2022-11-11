@@ -81,12 +81,6 @@ The second step is to log in to a SambaNova node from the `login node`.
     $ cp /var/tmp/Additional/slurm/Models/ANL_Acceptance_RC1_11_5/bert_train-inf.sh ~/
     ```
 
-* SambaNova uses Slurm for job submission and queueing. We will use `srun` to submit our job to job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. 
-    ```bash
-    $ cd ~
-    $ srun bert_train-inf.sh
-    ```
-
 ## Getting started
 
 1. Login to Sambanova login node. 
@@ -119,7 +113,11 @@ The second step is to log in to a SambaNova node from the `login node`.
       $ cd pretrain/
       ```
 
-2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the pretrain folder. Example: `OUTDIR=$HOME/pretrain`
+2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the pretrain folder. Example: 
+
+   ```bash
+      OUTDIR=$HOME/pretrain
+      ```
 
 3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 2 RDUs are used:
 
@@ -194,7 +192,11 @@ The second step is to log in to a SambaNova node from the `login node`.
       $ cd finetune/
       ```
 
-2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the finetune folder. Example: `OUTDIR=$HOME/finetune`
+2. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the finetune folder. Example: 
+
+   ```bash
+      OUTDIR=$HOME/finetune
+      ``` 
 
 3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 1 RDU is used: 
 
