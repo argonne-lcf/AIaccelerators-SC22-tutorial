@@ -32,7 +32,7 @@ To connect to a CS-2 ("chief") node:<br>
     ``` -->
 
 1. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
-   Copy BERT code to youyr `$HOME` directory. 
+   Copy BERT code to your `$HOME` directory. 
     ```bash
     $ cp -r /projects/aitestbed_training/CS-2/model_zoo ~/  
     $ cd bert  
