@@ -200,3 +200,5 @@ To further reduce the execution time we have precompiled model. For your convene
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_squad_run/`.
 
 # Other Models and Use-cases
+
+* See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Example-Programs/index.html) for instructions to run other well-known AI applications on SambaNova hardware (LeNet, FFN-MNIST, logistic regression, UNet)
