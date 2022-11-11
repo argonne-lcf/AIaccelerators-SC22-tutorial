@@ -152,6 +152,8 @@ To further reduce the execution time we have precompiled model. For your convene
 
 # Pretraining in data parallel mode
 
+**NOTE**: please follow first the steps in **Connect to Login Node** and **SambaFlow SDK setup** before proceeding to this step.
+
 1. Create a folder for pretraining in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-pretrain-job-LBS1024.sh` to it. Then, go to that folder. Example:
 
    ```bash
@@ -175,6 +177,8 @@ To further reduce the execution time we have precompiled model. For your convene
 5. Once the job is completed, you can see the checkpoint(s) and accuracy metrics in `hf_output_lrg_run/`. The throughput is outputted in the `log_bert_pretrain_LBS1024_np2.out` file (search for throughput in the file).
 
 # Fine-tuning using 1 RDU:
+
+**NOTE**: please follow first the steps in **Connect to Login Node** and **SambaFlow SDK setup** before proceeding to this step.
 
 1. Create a folder for finetuning in your home repo, and copy the bash script `/projects/aitestbed_training/SN/precompiled_bert/bash_scripts/submit-bert-squad-job.sh` to it. Then, go to that folder. Example:
 
