@@ -22,7 +22,7 @@
 The presentation slides are available at [here](https://anl.box.com/s/0wltiw52s9yuf0d3gzhjlhgyi841yua1). 
 
 ## BERT-Large on AI Accelerators
-Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on AI testbeds:
+Bidirectional Encoder Representations from Transformers (BERT) is a transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. Here are instructions to running it on the following system at ALCF AI Testbed:
 
 + [Cerebras](./cerebras/readme.md)
 + [Sambanova](./sambanova/readme.md)
