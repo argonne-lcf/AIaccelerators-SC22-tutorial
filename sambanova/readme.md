@@ -110,7 +110,7 @@ The second step is to log in to a SambaNova node from the `login node`.
    ```bash
    OUTDIR=$HOME/pretrain
    ```
-   Note: the per device batch size (LBS) is set to 1024 here.  
+   Note: the per device batch size (LBS) is set to 1024 here. Also, the number of steps was set to 100, but this can be changed. 
 
 3. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 2 RDUs are used:
 
@@ -191,11 +191,13 @@ The second step is to log in to a SambaNova node from the `login node`.
    $ cp -r /projects/aitestbed_training/SN/precompiled_bert/squad_cache ./
    ```
 
-3. Open the `submit-bert-pretrain-job-LBS1024.sh` file, and change `OUTDIR` to location of the finetune folder. Example: 
+3. Open the `submit-bert-squad-job.sh` file, and change `OUTDIR` to location of the finetune folder. Example: 
 
    ```bash
    OUTDIR=$HOME/finetune
    ``` 
+   Note: the number of train epochs was set to 0.08, but this can be changed
+
 
 4. SambaNova uses SLURM for job submission and queueing. We will use sbatch to submit our job to the job scheduler. Please refer to [Sambanova Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/sambanova/Job-Queuing-and-Submission/index.html) for further details. In the following example, 1 RDU is used: 
 
