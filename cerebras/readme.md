@@ -148,7 +148,7 @@ We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for
     <summary>Click for Sample Output</summary>
 
     ```bash
-    $ ToDo
+    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_with_compilation --cs_ip $CS_IP
     Launching: srun --unbuffered --kill-on-bad-exit --nodes=1 --tasks-per-node=4 --cpus-per-task=16 --gres=cs:cerebras:1 : --nodes=4 --tasks-per-node=4 --cpus-per-task=16  --exclusive singularity exec -B /home,/software/cerebras,/projects  /software/cerebras/cs2-02/container/cbcore_latest.sif python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_with_compilation --cs_ip 192.168.220.50
     srun: job 6182 queued and waiting for resources
     srun: job 6182 has been allocated resources
