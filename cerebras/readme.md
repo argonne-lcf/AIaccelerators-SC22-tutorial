@@ -49,7 +49,7 @@ To connect to a CS-2 ("chief") node:<br>
   
   
 * **Run scripts on CS-2 with Pre-Compiled Model:**
-To further reduce the execution time we have precompiled model. For your conveneice, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
+To further reduce the execution time we have precompiled model. For your convenience, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
 
   * Copy precompiled model direcotry to your `$HOME` directory. 
     ```bash
@@ -61,7 +61,7 @@ To further reduce the execution time we have precompiled model. For your convene
     ```bash
     $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP
     ```
-   This will take approximately 25  minutes to run. Here is the sample output 
+   This will take approximately 25 minutes to run. Here is the sample output 
 
    <details>
    <summary>Click for Sample Output</summary>
@@ -134,31 +134,92 @@ To further reduce the execution time we have precompiled model. For your convene
 
    </details>
   
-  * **Run scripts on CS-2:** 
-  We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for 100 steps to reduce execution time during the period of tutorial.  
-  `csrun_wse` is used to run a job on both the CS-2 system and one or more CPU worker nodes.
+* **Run scripts on CS-2:** 
+We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for 1000 steps to reduce execution time during the period of tutorial.  
+`csrun_wse` is used to run a job on both the CS-2 system and one or more CPU worker nodes.
 
     ```bash
     $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_with_compilation --cs_ip $CS_IP
     ```
     
-    This will take approximately `#todo` minutes to run. Here is the sample output 
+    This will take approximately 40 minutes to run. Here is the sample output 
 
     <details>
     <summary>Click for Sample Output</summary>
 
     ```bash
     $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
-    $ ToDo
+    Launching: srun --unbuffered --kill-on-bad-exit --nodes=1 --tasks-per-node=4 --cpus-per-task=16 --gres=cs:cerebras:1 : --nodes=4 --tasks-per-node=4 --cpus-per-task=16  --exclusive singularity exec -B /home,/software/cerebras,/projects  /software/cerebras/cs2-02/container/cbcore_latest.sif python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_with_compilation --cs_ip 192.168.220.50
+    srun: job 6182 queued and waiting for resources
+    srun: job 6182 has been allocated resources
+    FWTF912 06:38:12  ERROR: runconfig_port_in_use: Port range 36774-36793 on host 'testbed-cs2-02-med8.ai.alcf.anl.gov' cannot be used. This may result in a hang. Suggestion: try available port 42786 using CSConfig(port_base=42786).
+    INFO:tensorflow:TF_CONFIG environment variable: {'cluster': {'chief': ['testbed-cs2-02-med8.ai.alcf.anl.gov:36774'], 'worker': ['testbed-cs2-02-med8.ai.alcf.anl.gov:36776', 'testbed-cs2-02-med8.ai.alcf.anl.gov:36778', 'testbed-cs2-02-med8.ai.alcf.anl.gov:36780', 'testbed-cs2-02-med1.ai.alcf.anl.gov:36782', 'testbed-cs2-02-med1.ai.alcf.anl.gov:36784', 'testbed-cs2-02-med1.ai.alcf.anl.gov:36786', 'testbed-cs2-02-med1.ai.alcf.anl.gov:36788', 'testbed-cs2-02-med2.ai.alcf.anl.gov:36790', 'testbed-cs2-02-med2.ai.alcf.anl.gov:36792', 'testbed-cs2-02-med2.ai.alcf.anl.gov:36794', 'testbed-cs2-02-med2.ai.alcf.anl.gov:36796', 'testbed-cs2-02-med3.ai.alcf.anl.gov:36798', 'testbed-cs2-02-med3.ai.alcf.anl.gov:36800', 'testbed-cs2-02-med3.ai.alcf.anl.gov:36802', 'testbed-cs2-02-med3.ai.alcf.anl.gov:36804', 'testbed-cs2-02-med4.ai.alcf.anl.gov:36806', 'testbed-cs2-02-med4.ai.alcf.anl.gov:36808', 'testbed-cs2-02-med4.ai.alcf.anl.gov:36810', 'testbed-cs2-02-med4.ai.alcf.anl.gov:36812']}, 'task': {'type': 'chief', 'index': 0}}
+    INFO:root:Running train on CS-2
+    WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:1666: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+    Instructions for updating:
+    If using Keras pass *_constraint arguments to layers.
+    WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+    Instructions for updating:
+    Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+    2022-11-12 06:38:12.408518: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+    2022-11-12 06:38:12.424711: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2500000000 Hz
+    2022-11-12 06:38:12.426515: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5da7960 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+    2022-11-12 06:38:12.426545: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+    INFO:root:---------- Suggestions to improve input_fn performance ----------
+    WARNING:root:[input_fn] - interleave(): in ParallelInterleaveDatasetV3, `cycle_length` is not being set to CS_AUTOTUNE. Currently, it is set to 4. If determinism is not required, Using CS_AUTOTUNE is likely to improve performance unless you are deliberately using a fine-tuned value.e.g. dataset = dataset.interleave(map_func, cycle_length=cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE)
+    WARNING:root:GroupByWindowDataset is not recognized by the Cerebras input_fn analyzer and cannot be evaluated for potential optimizations. Please report this to the Cerebras Support Team.
+    INFO:root:[input_fn] - TFRecordDataset: buffer_size set to 2560
+    INFO:root:[input_fn] - batch(): batch_size set to 256
+    WARNING:root:[input_fn] - flat_map(): use map() instead of flat_map() to improve performance and parallelize reads. If you are not calling `flat_map` directly, check if you are using: from_generator, TextLineDataset, TFRecordDataset, or FixedLenthRecordDataset. If so, set `num_parallel_reads` to > 1 or cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE, and map() will be used automatically
+    INFO:root:----------------- End of input_fn suggestions -----------------
+    INFO:cerebras.stack.tools.caching_stack:Using lair flow into stack
+    =============== Cerebras Compilation Completed ===============
+    INFO:root:Creating 'loss' summary automatically
+    INFO:tensorflow:Create CheckpointSaverHook.
+    INFO:tensorflow:Graph was finalized.
+    INFO:tensorflow:Running local_init_op.
+    INFO:tensorflow:Done running local_init_op.
+    INFO:tensorflow:Calling checkpoint listeners before saving checkpoint 0...
+    INFO:tensorflow:Saving checkpoints for 0 into model_dir_with_compilation/model.ckpt.
+    INFO:tensorflow:model_dir_with_compilation/model.ckpt-0 is not in all_model_checkpoint_paths. Manually adding it.
+    INFO:tensorflow:Calling checkpoint listeners after saving checkpoint 0...
+    INFO:root:Programming CS-2 fabric. This may take a couple of minutes. Please do not interrupt.
+    TSKM202 07:03:05  Checkpoint callback registered!
+    TSKM200 07:03:05  Getting block prebuffer numbers from cm.daemon 192.168.220.50:9001
+    TSKM205 07:03:05  Waiting for block prebuffer percentage to rise above 50%, now 0%
+    MSGS088 07:03:06  ^[[0;33mWARNING: ^[[0mMessage count for TSKM205 reached maximum 1: further instances will be not be printed
+    TSKM200 07:03:13  Block prebuffer percentage is sufficient: 64
+    TSKM201 07:03:13  Send block sizes:
+    TSKM201 07:03:13> pre-cliff: 43690, post-cliff: 43690; using send block size: 43690
+    TSKM201 07:03:13> Receive block sizes:
+    TSKM201 07:03:13> pre-cliff: 32000, post-cliff: 32000; using receive block size: 32000
+    INFO:root:Fabric programmed: this took 376.41572999954224 seconds.
+    INFO:tensorflow:Waiting for 19 streamer(s) to prime the data pipeline
+    INFO:tensorflow:Streamers are ready
+    INFO:root:Chief fully up. Waiting for Streaming (using 93.39% of fabric cores)
+    INFO:tensorflow:Graph was finalized.
+    INFO:tensorflow:Running local_init_op.
+    INFO:tensorflow:Done running local_init_op.
+    INFO:tensorflow:global step 0: loss = 11.2734375 (0.59 steps/sec)
+    INFO:tensorflow:global step 10: loss = 11.125 (1.62 steps/sec)
+    INFO:tensorflow:global step 20: loss = 10.7890625 (2.45 steps/sec)
+    ...
+    INFO:tensorflow:global step 970: loss = 7.5078125 (26.83 steps/sec)
+    INFO:tensorflow:global step 980: loss = 7.67578125 (27.1 steps/sec)
+    INFO:tensorflow:global step 990: loss = 7.69921875 (27.37 steps/sec)
+    INFO:tensorflow:Training finished with 256000 samples in 37.101 seconds, 6900.09 samples/second.
+    INFO:tensorflow:Calling checkpoint listeners before saving checkpoint 1000...
+    INFO:tensorflow:Saving checkpoints for 1000 into model_dir_with_compilation/model.ckpt.
+    INFO:tensorflow:model_dir_with_compilation/model.ckpt-1000 is not in all_model_checkpoint_paths. Manually adding it.
+    INFO:tensorflow:Calling checkpoint listeners after saving checkpoint 1000...
+    INFO:tensorflow:Loss for final step: 7.57.
     ```
 
     </details>
 
-    * **Note** : 
-    The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run. `configs/params_bert_large_msl128_fast.yaml` trains BERT large for only 100 steps and it does not save any checkpoints.
+  * **Note** : 
+    The original config file is `configs/params_bert_large_msl129.yaml` which should be used when the machine is not busy post tutorial.
+It trains BERT for 900,000 steps, following the original paper implementation. This will take approximately 10 hours to run. `configs/params_bert_large_msl128_fast.yaml` trains BERT large for only 1000 steps.
 
   <!-- * **Run scripts on CPU:**  
    `csrun_cpu` is used to run a cpu-only job on one or more worker nodes.
