@@ -31,11 +31,11 @@ To connect to a CS-2 ("chief") node:<br>
       $ ssh ALCFUserID@cerebras.alcf.anl.gov 
     ``` -->
 
-1. BERT Code is in the [Bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
+1. BERT Code is in the [bert](./bert/) directory of this repository. For your convenience, this code is also available locally. 
    Copy BERT code to your `$HOME` directory. 
     ```bash
     $ cp -r /projects/aitestbed_training/CS-2/model_zoo ~/  
-    $ cd bert  
+    $ cd model_zoo/modelzoo/transformers/tf/bert  
     ```
 
 2. Connect to the one of the destination CS-2 chief node:  
@@ -53,12 +53,13 @@ To further reduce the execution time we have precompiled model. For your convene
 
   * Copy precompiled model direcotry to your `$HOME` directory. 
     ```bash
-    $ cp -r /projects/aitestbed_training/CS-2/precompiled_bert ~
+    $ cd ~/model_zoo/modelzoo/transformers/tf/bert/
+    $ cp -r /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128.tgz .
+    $ tar zxvf model_dir_bert_large_msl128.tgz
     ```
   * `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
     ```bash
-    $ MODELDIR=$HOME/precompiled_bert
-    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir $MODELDIR --cs_ip $CS_IP
+    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP
     ```
    This will take approximately `#todo` minutes to run. Here is the sample output 
 
@@ -66,23 +67,39 @@ To further reduce the execution time we have precompiled model. For your convene
    <summary>Click for Sample Output</summary>
 
    ```bash
-   $ ToDo
-   $ ToDo
-   $ ToDo
-   $ ToDo
-   $ ToDo
+   $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP
+Launching: srun --unbuffered --kill-on-bad-exit --nodes=1 --tasks-per-node=4 --cpus-per-task=32 --gres=cs:cerebras:1 : --nodes=4 --tasks-per-node=4 --cpus-per-task=32  --exclusive singularity exec -B /home,/software/cerebras,/projects,/n0/anl/data  /software/cerebras/cs2-01/container/cbcore_latest.sif python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip 192.168.220.30
+srun: job 9883 queued and waiting for resources
+srun: job 9883 has been allocated resources
+INFO:tensorflow:TF_CONFIG environment variable: {'cluster': {'chief': ['testbed-cs2-01-med1:29917'], 'worker': ['testbed-cs2-01-med1:29919', 'testbed-cs2-01-med1:29921', 'testbed-cs2-01-med1:29923', 'testbed-cs2-01-med2:29925', 'testbed-cs2-01-med2:29927', 'testbed-cs2-01-med2:29929', 'testbed-cs2-01-med2:29931', 'testbed-cs2-01-med3:29933', 'testbed-cs2-01-med3:29935', 'testbed-cs2-01-med3:29937', 'testbed-cs2-01-med3:29939', 'testbed-cs2-01-med4:29941', 'testbed-cs2-01-med4:29943', 'testbed-cs2-01-med4:29945', 'testbed-cs2-01-med4:29947', 'testbed-cs2-01-med5:29949', 'testbed-cs2-01-med5:29951', 'testbed-cs2-01-med5:29953', 'testbed-cs2-01-med5:29955']}, 'task': {'type': 'chief', 'index': 0}}
+INFO:root:Running train on CS-2
+WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:1666: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+2022-11-12 00:40:22.709883: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 1996290000 Hz
+2022-11-12 00:40:22.711950: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4985fc0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-11-12 00:40:22.712002: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+INFO:root:---------- Suggestions to improve input_fn performance ----------
+WARNING:root:[input_fn] - interleave(): in ParallelInterleaveDatasetV3, `cycle_length` is not being set to CS_AUTOTUNE. Currently, it is set to 4. If determinism is not required, Using CS_AUTOTUNE is likely to improve performance unless you are deliberately using a fine-tuned value.e.g. dataset = dataset.interleave(map_func, cycle_length=cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE)
+WARNING:root:GroupByWindowDataset is not recognized by the Cerebras input_fn analyzer and cannot be evaluated for potential optimizations. Please report this to the Cerebras Support Team.
+INFO:root:[input_fn] - TFRecordDataset: buffer_size set to 2560
+INFO:root:[input_fn] - batch(): batch_size set to 256
+WARNING:root:[input_fn] - flat_map(): use map() instead of flat_map() to improve performance and parallelize reads. If you are not calling `flat_map` directly, check if you are using: from_generator, TextLineDataset, TFRecordDataset, or FixedLenthRecordDataset. If so, set `num_parallel_reads` to > 1 or cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE, and map() will be used automatically
+INFO:root:----------------- End of input_fn suggestions -----------------
+INFO:cerebras.stack.tools.caching_stack:Using lair flow into stack
    ```
 
    </details>
   
   * **Run scripts on CS-2:** 
-  We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for 100 steps to reduce executiuon time during the period of tutorial.  
-  `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
+  We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for 100 steps to reduce execution time during the period of tutorial.  
+  `csrun_wse` is used to run a job on both the CS-2 system and one or more CPU worker nodes.
 
     ```bash
-    $ MODELDIR=model_dir_bert_large_msl128_$(hostname)  
-    $ rm -r $MODELDIR 
-    $ time -p csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir $MODELDIR --cs_ip $CS_IP
+    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_with_compilation --cs_ip $CS_IP
     ```
     
     This will take approximately `#todo` minutes to run. Here is the sample output 
@@ -101,7 +118,7 @@ To further reduce the execution time we have precompiled model. For your convene
     </details>
 
     * **Note** : 
-    The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run.
+    The original config file is `configs/params_bert_large_msl128.yaml` which should be used when the machine is not busy post tutorial. This will take approximately `#todo` minutes to run. `configs/params_bert_large_msl128_fast.yaml` trains BERT large for only 100 steps and it does not save any checkpoints.
 
   <!-- * **Run scripts on CPU:**  
    `csrun_cpu` is used to run a cpu-only job on one or more worker nodes.
@@ -129,7 +146,7 @@ To further reduce the execution time we have precompiled model. For your convene
 
 ## Other Models and Use-cases 
 
-* See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) for instructions to run other well-known AI applications on Cerebras hardware (e.g., UNet, BragNN etc)
+* See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) for instructions to run other well-known AI applications on Cerebras hardware (e.g., UNet, BragNN etc).
 
 
 
