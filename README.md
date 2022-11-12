@@ -33,7 +33,7 @@ To-do: add instructions to use precompiled models and screenshots of the progres
 
 + [SC22 Tutorial Webpage](https://sc22.supercomputing.org/presentation/?id=tut151&sess=sess221)
 + [Github Tutorial Repository](https://github.com/argonne-lcf/AIaccelerators-SC22-tutorial/)
-+ [Overviw of AI Testbeds at ALCF](https://www.alcf.anl.gov/alcf-ai-testbed)
++ [Overview of AI Testbeds at ALCF](https://www.alcf.anl.gov/alcf-ai-testbed)
 + [ALCF AI Testbed Documentation](https://www.alcf.anl.gov/support/ai-testbed-userdocs/)
 + [Director’s Discretionary Allocation Program](https://www.alcf.anl.gov/science/directors-discretionary-allocation-program)
 + [Join Slack Workspace](https://join.slack.com/t/aiacc-sc22-tut/shared_invite/zt-1i6r49ks1-9IxbIk6NM4TdHaEol26Z9Q)
