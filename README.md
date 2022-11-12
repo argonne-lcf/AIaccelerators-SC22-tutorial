@@ -27,7 +27,7 @@ Bidirectional Encoder Representations from Transformers (BERT) is a transformer-
 + [Cerebras](./cerebras/readme.md)
 + [Sambanova](./sambanova/readme.md)
 
-To-do: add instructions to use precompiled models and screenshots of the progress and output files
+<!-- To-do: add instructions to use precompiled models and screenshots of the progress and output files -->
 
 ## Important Links 
 
