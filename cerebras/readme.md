@@ -68,68 +68,68 @@ To further reduce the execution time we have precompiled model. For your convene
 
    ```bash
    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP --max_steps 1000
-Launching: srun --unbuffered --kill-on-bad-exit --nodes=1 --tasks-per-node=4 --cpus-per-task=16 --gres=cs:cerebras:1 : --nodes=4 --tasks-per-node=4 --cpus-per-task=16  --exclusive singularity exec -B /home,/software/cerebras,/projects  /software/cerebras/cs2-02/container/cbcore_latest.sif python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip 192.168.220.50 --max_steps 1000
-srun: job 6180 queued and waiting for resources
-srun: job 6180 has been allocated resources
-FWTF912 05:43:05  ERROR: runconfig_port_in_use: Port range 25473-25492 on host 'testbed-cs2-02-med8.ai.alcf.anl.gov' cannot be used. This may result in a hang. Suggestion: try available port 15786 using CSConfig(port_base=15786).
-INFO:tensorflow:TF_CONFIG environment variable: {'cluster': {'chief': ['testbed-cs2-02-med8.ai.alcf.anl.gov:25473'], 'worker': ['testbed-cs2-02-med8.ai.alcf.anl.gov:25475', 'testbed-cs2-02-med8.ai.alcf.anl.gov:25477', 'testbed-cs2-02-med8.ai.alcf.anl.gov:25479', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25481', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25483', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25485', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25487', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25489', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25491', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25493', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25495', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25497', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25499', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25501', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25503', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25505', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25507', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25509', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25511']}, 'task': {'type': 'chief', 'index': 0}}
-INFO:root:Running train on CS-2
-WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:1666: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
-Instructions for updating:
-If using Keras pass *_constraint arguments to layers.
-WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
-2022-11-12 05:43:05.482126: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
-2022-11-12 05:43:05.501558: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2500000000 Hz
-2022-11-12 05:43:05.503387: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5804530 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2022-11-12 05:43:05.503423: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-INFO:root:---------- Suggestions to improve input_fn performance ----------
-WARNING:root:[input_fn] - interleave(): in ParallelInterleaveDatasetV3, `cycle_length` is not being set to CS_AUTOTUNE. Currently, it is set to 4. If determinism is not required, Using CS_AUTOTUNE is likely to improve performance unless you are deliberately using a fine-tuned value.e.g. dataset = dataset.interleave(map_func, cycle_length=cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE)
-WARNING:root:GroupByWindowDataset is not recognized by the Cerebras input_fn analyzer and cannot be evaluated for potential optimizations. Please report this to the Cerebras Support Team.
-INFO:root:[input_fn] - TFRecordDataset: buffer_size set to 2560
-INFO:root:[input_fn] - batch(): batch_size set to 256
-WARNING:root:[input_fn] - flat_map(): use map() instead of flat_map() to improve performance and parallelize reads. If you are not calling `flat_map` directly, check if you are using: from_generator, TextLineDataset, TFRecordDataset, or FixedLenthRecordDataset. If so, set `num_parallel_reads` to > 1 or cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE, and map() will be used automatically
-INFO:root:----------------- End of input_fn suggestions -----------------
-INFO:tensorflow:Cached compilation found for this model configuration
-INFO:root:Creating 'loss' summary automatically
-INFO:tensorflow:Create CheckpointSaverHook.
-INFO:tensorflow:Graph was finalized.
-INFO:tensorflow:Running local_init_op.
-INFO:tensorflow:Done running local_init_op.
-INFO:tensorflow:Calling checkpoint listeners before saving checkpoint 0...
-INFO:tensorflow:Saving checkpoints for 0 into model_dir_bert_large_msl128/model.ckpt.
-INFO:tensorflow:model_dir_bert_large_msl128/model.ckpt-0 is not in all_model_checkpoint_paths. Manually adding it.
-INFO:tensorflow:Calling checkpoint listeners after saving checkpoint 0...
-INFO:root:Programming CS-2 fabric. This may take a couple of minutes. Please do not interrupt.
-TSKM202 05:51:48  Checkpoint callback registered!
-TSKM200 05:51:49  Getting block prebuffer numbers from cm.daemon 192.168.220.50:9001
-TSKM205 05:51:49  Waiting for block prebuffer percentage to rise above 50%, now 0%
-MSGS088 05:51:50  ^[[0;33mWARNING: ^[[0mMessage count for TSKM205 reached maximum 1: further instances will be not be printed
-TSKM200 05:51:57  Block prebuffer percentage is sufficient: 64
-TSKM201 05:51:57  Send block sizes:
-TSKM201 05:51:57> pre-cliff: 43690, post-cliff: 43690; using send block size: 43690
-TSKM201 05:51:57> Receive block sizes:
-TSKM201 05:51:57> pre-cliff: 32000, post-cliff: 32000; using receive block size: 32000
-INFO:root:Fabric programmed: this took 367.94864416122437 seconds.
-INFO:tensorflow:Waiting for 19 streamer(s) to prime the data pipeline
-INFO:tensorflow:Streamers are ready
-INFO:root:Chief fully up. Waiting for Streaming (using 93.39% of fabric cores)
-INFO:tensorflow:Graph was finalized.
-INFO:tensorflow:Running local_init_op.
-INFO:tensorflow:Done running local_init_op.
-INFO:tensorflow:global step 0: loss = 11.1484375 (0.6 steps/sec)
-INFO:tensorflow:global step 10: loss = 11.0234375 (1.62 steps/sec)
-INFO:tensorflow:global step 20: loss = 10.71875 (2.47 steps/sec)
-...
-INFO:tensorflow:global step 980: loss = 7.5546875 (27.07 steps/sec)
-INFO:tensorflow:global step 990: loss = 7.66015625 (27.34 steps/sec)
-INFO:tensorflow:Training finished with 256000 samples in 37.164 seconds, 6888.4 samples/second.
-INFO:tensorflow:Calling checkpoint listeners before saving checkpoint 1000...
-INFO:tensorflow:Saving checkpoints for 1000 into model_dir_bert_large_msl128/model.ckpt.
-INFO:tensorflow:model_dir_bert_large_msl128/model.ckpt-1000 is not in all_model_checkpoint_paths. Manually adding it.
-INFO:tensorflow:Calling checkpoint listeners after saving checkpoint 1000...
-INFO:tensorflow:Loss for final step: 7.59.
+   Launching: srun --unbuffered --kill-on-bad-exit --nodes=1 --tasks-per-node=4 --cpus-per-task=16 --gres=cs:cerebras:1 : --nodes=4 --tasks-per-node=4 --cpus-per-task=16  --exclusive singularity exec -B /home,/software/cerebras,/projects  /software/cerebras/cs2-02/container/cbcore_latest.sif python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip 192.168.220.50 --max_steps 1000
+   srun: job 6180 queued and waiting for resources
+   srun: job 6180 has been allocated resources
+   FWTF912 05:43:05  ERROR: runconfig_port_in_use: Port range 25473-25492 on host 'testbed-cs2-02-med8.ai.alcf.anl.gov' cannot be used. This may result in a hang. Suggestion: try available port 15786 using CSConfig(port_base=15786).
+   INFO:tensorflow:TF_CONFIG environment variable: {'cluster': {'chief': ['testbed-cs2-02-med8.ai.alcf.anl.gov:25473'], 'worker': ['testbed-cs2-02-med8.ai.alcf.anl.gov:25475', 'testbed-cs2-02-med8.ai.alcf.anl.gov:25477', 'testbed-cs2-02-med8.ai.alcf.anl.gov:25479', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25481', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25483', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25485', 'testbed-cs2-02-med1.ai.alcf.anl.gov:25487', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25489', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25491', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25493', 'testbed-cs2-02-med2.ai.alcf.anl.gov:25495', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25497', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25499', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25501', 'testbed-cs2-02-med3.ai.alcf.anl.gov:25503', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25505', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25507', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25509', 'testbed-cs2-02-med4.ai.alcf.anl.gov:25511']}, 'task': {'type': 'chief', 'index': 0}}
+   INFO:root:Running train on CS-2
+   WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:1666: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+   Instructions for updating:
+   If using Keras pass *_constraint arguments to layers.
+   WARNING:tensorflow:From /cbcore/python/python-x86_64/lib/python3.7/site-packages/tensorflow/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+   Instructions for updating:
+   Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+   2022-11-12 05:43:05.482126: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+   2022-11-12 05:43:05.501558: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2500000000 Hz
+   2022-11-12 05:43:05.503387: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5804530 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+   2022-11-12 05:43:05.503423: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+   INFO:root:---------- Suggestions to improve input_fn performance ----------
+   WARNING:root:[input_fn] - interleave(): in ParallelInterleaveDatasetV3, `cycle_length` is not being set to CS_AUTOTUNE. Currently, it is set to 4. If determinism is not required, Using CS_AUTOTUNE is likely to improve performance unless you are deliberately using a fine-tuned value.e.g. dataset = dataset.interleave(map_func, cycle_length=cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE)
+   WARNING:root:GroupByWindowDataset is not recognized by the Cerebras input_fn analyzer and cannot be evaluated for potential optimizations. Please report this to the Cerebras Support Team.
+   INFO:root:[input_fn] - TFRecordDataset: buffer_size set to 2560
+   INFO:root:[input_fn] - batch(): batch_size set to 256
+   WARNING:root:[input_fn] - flat_map(): use map() instead of flat_map() to improve performance and parallelize reads. If you are not calling `flat_map` directly, check if you are using: from_generator, TextLineDataset, TFRecordDataset, or FixedLenthRecordDataset. If so, set `num_parallel_reads` to > 1 or cerebras.tf.tools.analyze_input_fn.CS_AUTOTUNE, and map() will be used automatically
+   INFO:root:----------------- End of input_fn suggestions -----------------
+   INFO:tensorflow:Cached compilation found for this model configuration
+   INFO:root:Creating 'loss' summary automatically
+   INFO:tensorflow:Create CheckpointSaverHook.
+   INFO:tensorflow:Graph was finalized.
+   INFO:tensorflow:Running local_init_op.
+   INFO:tensorflow:Done running local_init_op.
+   INFO:tensorflow:Calling checkpoint listeners before saving checkpoint 0...
+   INFO:tensorflow:Saving checkpoints for 0 into model_dir_bert_large_msl128/model.ckpt.
+   INFO:tensorflow:model_dir_bert_large_msl128/model.ckpt-0 is not in all_model_checkpoint_paths. Manually adding it.
+   INFO:tensorflow:Calling checkpoint listeners after saving checkpoint 0...
+   INFO:root:Programming CS-2 fabric. This may take a couple of minutes. Please do not interrupt.
+   TSKM202 05:51:48  Checkpoint callback registered!
+   TSKM200 05:51:49  Getting block prebuffer numbers from cm.daemon 192.168.220.50:9001
+   TSKM205 05:51:49  Waiting for block prebuffer percentage to rise above 50%, now 0%
+   MSGS088 05:51:50  ^[[0;33mWARNING: ^[[0mMessage count for TSKM205 reached maximum 1: further instances will be not be printed
+   TSKM200 05:51:57  Block prebuffer percentage is sufficient: 64
+   TSKM201 05:51:57  Send block sizes:
+   TSKM201 05:51:57> pre-cliff: 43690, post-cliff: 43690; using send block size: 43690
+   TSKM201 05:51:57> Receive block sizes:
+   TSKM201 05:51:57> pre-cliff: 32000, post-cliff: 32000; using receive block size: 32000
+   INFO:root:Fabric programmed: this took 367.94864416122437 seconds.
+   INFO:tensorflow:Waiting for 19 streamer(s) to prime the data pipeline
+   INFO:tensorflow:Streamers are ready
+   INFO:root:Chief fully up. Waiting for Streaming (using 93.39% of fabric cores)
+   INFO:tensorflow:Graph was finalized.
+   INFO:tensorflow:Running local_init_op.
+   INFO:tensorflow:Done running local_init_op.
+   INFO:tensorflow:global step 0: loss = 11.1484375 (0.6 steps/sec)
+   INFO:tensorflow:global step 10: loss = 11.0234375 (1.62 steps/sec)
+   INFO:tensorflow:global step 20: loss = 10.71875 (2.47 steps/sec)
+   ...
+   INFO:tensorflow:global step 980: loss = 7.5546875 (27.07 steps/sec)
+   INFO:tensorflow:global step 990: loss = 7.66015625 (27.34 steps/sec)
+   INFO:tensorflow:Training finished with 256000 samples in 37.164 seconds, 6888.4 samples/second.
+   INFO:tensorflow:Calling checkpoint listeners before saving checkpoint 1000...
+   INFO:tensorflow:Saving checkpoints for 1000 into model_dir_bert_large_msl128/model.ckpt.
+   INFO:tensorflow:model_dir_bert_large_msl128/model.ckpt-1000 is not in all_model_checkpoint_paths. Manually adding it.
+   INFO:tensorflow:Calling checkpoint listeners after saving checkpoint 1000...
+   INFO:tensorflow:Loss for final step: 7.59.
    ```
 
    </details>
