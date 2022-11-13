@@ -48,9 +48,9 @@ To connect to a CS-2 ("chief") node:<br>
   
   
 * **Run scripts on CS-2 with Pre-Compiled Model:**
-To further reduce the execution time we have precompiled model. For your convenience, the precompiled model is available at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
+To further reduce the execution time, we have a precompiled model at `/projects/aitestbed_training/CS-2/precompiled_bert`. Here are commands to run it. 
 
-  * Copy precompiled model direcotry to your `$HOME` directory. 
+  * Copy precompiled model directory to your `$HOME` directory. 
     ```bash
     $ cd ~/model_zoo/modelzoo/transformers/tf/bert/
     $ cp -r /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128.tgz .
