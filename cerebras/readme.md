@@ -35,7 +35,6 @@ To connect to a CS-2 ("chief") node:<br>
    Copy BERT code to your `$HOME` directory. 
     ```bash
     $ cp -r /projects/aitestbed_training/CS-2/model_zoo ~/  
-    $ cd model_zoo/modelzoo/transformers/tf/bert  
     ```
 
 2. Connect to the one of the destination CS-2 chief node:  
