@@ -42,8 +42,7 @@ The second step is to log in to a SambaNova node from the `login node`.
     ```bash
     ALCFUserID@sm-01:~$ source /software/sambanova/envs/sn_env.sh
     ```
-<details>
-    <summary>Click for contents of the sn_env.sh script is shown below for convenience.</summary>
+* Contents of the sn_env.sh script is shown below for convenience
 
     * Setup the path to SambaFlow software stack. This stack includes the Runtime, the compilers, and the SambaFlow Python SDK which is used to create and run models.
       ```bash
