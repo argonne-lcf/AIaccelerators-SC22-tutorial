@@ -151,7 +151,7 @@ To connect to a CS-2 ("chief") node:<br>
 
 ## Other Models and Use-cases 
 
-* The config file `configs/params_bert_large_msl129.yaml` trains the model for 900,000 steps, follwing the original paper implemenation. This will take approximately 10 hours to run. 
+* The config file `configs/params_bert_large_msl128.yaml` trains the model for 900,000 steps, following the original paper implemenation. This will take approximately 10 hours to run. 
 
 * See [Example Programs](https://www.alcf.anl.gov/support/ai-testbed-userdocs/cerebras/Example-Programs/index.html) for instructions to run other well-known AI applications on Cerebras hardware (e.g., UNet, BragNN etc).
 
