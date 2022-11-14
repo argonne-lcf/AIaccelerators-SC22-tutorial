@@ -58,7 +58,7 @@ To further reduce the execution time, we have a precompiled model at `/projects/
     ```
   * `csrun_wse` is used to run a job on both the wafer scale engine and one or more worker nodes.
     ```bash
-    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP
+    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP --max_steps=1000
     ```
    This will take approximately 25 minutes to run. Here is the sample output 
 
