@@ -40,6 +40,7 @@ Bidirectional Encoder Representations from Transformers (BERT) is a transformer-
 + [Director’s Discretionary Allocation Program](https://www.alcf.anl.gov/science/directors-discretionary-allocation-program)
 + [Join Slack Workspace](https://join.slack.com/t/aiacc-sc22-tut/shared_invite/zt-1i6r49ks1-9IxbIk6NM4TdHaEol26Z9Q)
 + [Paper at PMBS22 "A Comprehensive Evaluation of Novel AI Accelerators for Deep Learning Workloads"](https://sc22.supercomputing.org/presentation/?id=ws_pmbsf120&sess=sess453)
++ [Feedback Form](https://forms.office.com/g/fwaK2kgCt4)
 
 
 
