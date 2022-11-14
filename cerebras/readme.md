@@ -71,7 +71,7 @@ To connect to a CS-2 ("chief") node:<br>
 
 3. We will use `csrun_wse` to run a job on the CS-2 system for 1000 steps to reduce execution time. 
    ```bash
-    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir model_dir_bert_large_msl128_fast --cs_ip $CS_IP --max_steps=1000
+    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128_fast.yaml --model_dir model_dir_bert_large_msl128_fast --cs_ip $CS_IP --max_steps=1000
    ```
 
    This will take approximately 25 minutes to run. Here is the sample output 
