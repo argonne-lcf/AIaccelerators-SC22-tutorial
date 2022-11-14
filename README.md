@@ -42,6 +42,14 @@ Bidirectional Encoder Representations from Transformers (BERT) is a transformer-
 + [Paper at PMBS22 "A Comprehensive Evaluation of Novel AI Accelerators for Deep Learning Workloads"](https://sc22.supercomputing.org/presentation/?id=ws_pmbsf120&sess=sess453)
 + [Feedback Form](https://forms.office.com/g/fwaK2kgCt4)
 
+## Instructions for requesting accounts on AI Testbed
+(1) Request an ALCF Computer User Account <https://accounts.alcf.anl.gov/accountRequest> if you do not currently have one
+(2) If you have an ALCF Account that is currently inactive, submit an account reactivation <https://accounts.alcf.anl.gov/accountReactivate> request*.
+(3) If you have an active ALCF account, click Join Project <https://accounts.alcf.anl.gov/joinProject> to submit a membership request*.
+
+Specify the following in your request:
+   *  Project Name: aitestbed_training
+
 
 
 
