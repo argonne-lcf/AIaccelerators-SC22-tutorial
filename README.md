@@ -20,7 +20,7 @@
 | 3.50 - 5.00 | Hands on Session with Cerebras and Sambanova          |
 
 ## Presentation Slides
-The presentation slides are available [here](https://anl.box.com/s/0wltiw52s9yuf0d3gzhjlhgyi841yua1). 
+The presentation slides and demos are available [here](https://anl.box.com/s/0wltiw52s9yuf0d3gzhjlhgyi841yua1). 
 
 
 ## BERT-Large on AI Accelerators
