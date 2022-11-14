@@ -133,7 +133,7 @@ To further reduce the execution time, we have a precompiled model at `/projects/
 
    </details>
   
-* **Run scripts on CS-2:** 
+<!-- * **Run scripts on CS-2:** 
 We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for 1000 steps to reduce execution time during the period of tutorial.  
 `csrun_wse` is used to run a job on both the CS-2 system and one or more CPU worker nodes.
 
@@ -214,7 +214,7 @@ We will use  `params_bert_large_msl128_fast.yaml` config file that runs BERT for
     INFO:tensorflow:Loss for final step: 7.57.
     ```
 
-    </details>
+    </details> -->
 
   * **Note** : 
     The original config file is `configs/params_bert_large_msl129.yaml` which should be used when the machine is not busy post tutorial.
