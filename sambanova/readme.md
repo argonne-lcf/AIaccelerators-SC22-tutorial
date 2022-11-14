@@ -42,9 +42,10 @@ The second step is to log in to a SambaNova node from the `login node`.
     ```bash
     ALCFUserID@sm-01:~$ source /software/sambanova/envs/sn_env.sh
     ```
-* Contents of the sn_env.sh script is shown below for convenience
 
-    * Setup the path to SambaFlow software stack. This stack includes the Runtime, the compilers, and the SambaFlow Python SDK which is used to create and run models.
+* The contents of the `sn_env.sh` script is shown below for convenience.
+
+  * Setup the path to SambaFlow software stack. This stack includes the Runtime, the compilers, and the SambaFlow Python SDK which is used to create and run models.
       ```bash
       alias snpath='export PATH=$PATH:/opt/sambaflow/bin' 
       ```
@@ -58,20 +59,21 @@ The second step is to log in to a SambaNova node from the `login node`.
       ```bash
       alias snvenv='source /opt/sambaflow/venv/bin/activate' 
       ```
-  **Note:**  SambaNova operations will fail unless the SambaNova `venv` is set up.
 
-* You may deactivate the environment when finished.
+    **Note:**  SambaNova operations will fail unless the SambaNova `venv` is set up.
+
+<!-- * You may deactivate the environment when finished.
     ```bash
     $ deactivate
-    ```
+    ``` -->
 
 
 # Steps to run BERT-Large on Sambanova DataScale SN10-8R
 
-* BERT Code is in the [Bert](./bert/) directory here.  
+* BERT Code is in the [Bert](./bert/) directory here for your reference.  
   * [transformners_hook.py](./bert/transformers_hook.py): contains code for BERT.
 
-## Getting started
+<!-- ## Getting started
 
 1. Login to Sambanova login node. 
     ```bash
@@ -88,7 +90,7 @@ The second step is to log in to a SambaNova node from the `login node`.
 3. Set up the required software environment. Do:
      ```bash
     $ source /software/sambanova/envs/sn_env.sh
-    ```
+    ``` -->
 
 ## Pretraining in data parallel mode
 
