@@ -57,16 +57,21 @@ To connect to a CS-2 ("chief") node:<br>
 
 **Note:** For the sake of this tutorial, we have precompiled model and lowered the number of steps to reduce execution time. 
 
-1. Copy model_zoo with precompiled model directory to your `$HOME` directory. 
+1. Copy model_zoo to your `$HOME` directory. 
     ```bash
-    $ cp /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128.tgz ~
-    $ tar zxvf model_dir_bert_large_msl128.tgz
-    $ cd model_dir_bert_large_msl128_fast/model_zoo/modelzoo/transformers/tf/bert/
+    $ cp -r /projects/aitestbed_training/CS-2/model_zoo ~
     ```
 
-2. We will use `csrun_wse` to run a job on the CS-2 system for 1000 steps to reduce execution time. 
+2. Go to Bert source directory. Copy precompiled model directory there and extract it.
    ```bash
-    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir model_dir_bert_large_msl128 --cs_ip $CS_IP --max_steps=1000
+   $ cd model_zoo/modelzoo/transformers/tf/bert/
+   $ cp /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128_fast.tgz .
+   $ tar zxvf model_dir_bert_large_msl128_fast.tgz
+   ``` 
+
+3. We will use `csrun_wse` to run a job on the CS-2 system for 1000 steps to reduce execution time. 
+   ```bash
+    $ csrun_wse python run.py --mode=train --params configs/params_bert_large_msl128.yaml --model_dir model_dir_bert_large_msl128_fast --cs_ip $CS_IP --max_steps=1000
    ```
 
    This will take approximately 25 minutes to run. Here is the sample output 
