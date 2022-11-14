@@ -65,8 +65,13 @@ To connect to a CS-2 ("chief") node:<br>
 2. Go to Bert source directory. Copy precompiled model directory there and extract it.
    ```bash
    $ cd model_zoo/modelzoo/transformers/tf/bert/
-   $ cp /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128_fast.tgz .
-   $ tar zxvf model_dir_bert_large_msl128_fast.tgz
+   $ cp /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128_fast_01.tgz .     # For cs2-01-master
+   OR
+   $ cp /projects/aitestbed_training/CS-2/model_dir_bert_large_msl128_fast_02.tgz .     # For cs2-02-master
+
+   $ tar zxvf model_dir_bert_large_msl128_fast_01.tgz                                   # For cs2-01-master
+   OR
+   $ tar zxvf model_dir_bert_large_msl128_fast_02.tgz                                   # For cs2-02-master
    ``` 
 
 3. We will use `csrun_wse` to run a job on the CS-2 system for 1000 steps to reduce execution time. 
